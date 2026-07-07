@@ -11,9 +11,12 @@ description: >-
   translated, robotic, over-formal, or "AI-ish" — e.g. English "delve / tapestry
   / it's not just X, it's Y" and em-dash overuse, or Korean 번역투·직역체·상투어. Also
   trigger when the user says the text "sounds like AI/ChatGPT wrote it" or asks
-  to make it natural / sound human / 자연스럽게 / 사람이 쓴 것처럼. Deep language-specific
-  catalogs live in references/languages/; the universal principles below apply
-  even to languages without a dedicated file.
+  to make it natural / sound human / 자연스럽게 / 사람이 쓴 것처럼. Not for one-line
+  politeness tweaks, generating fresh content from scratch, comprehension-only
+  translation, spelling/grammar-only fixes, or evading AI-detection tools — those
+  are different tasks. Deep language-specific catalogs live in
+  references/languages/; the universal principles below apply even to languages
+  without a dedicated file.
 ---
 
 # Humanizer
