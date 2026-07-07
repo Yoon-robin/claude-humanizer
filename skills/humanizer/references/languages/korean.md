@@ -66,6 +66,24 @@ dummy subjects don't carry into natural Korean.
 - ❌ 그것은 우리가 가장 자신 있는 기능입니다.
 - ✅ 저희가 가장 자신 있는 기능이에요.
 
+**`다양한` overuse.** AI reaches for 다양한 (various) before every noun. Once is
+fine; as a default modifier it's filler — cut it or name the actual things.
+- ❌ 다양한 기능과 다양한 혜택을 다양한 방식으로 제공합니다.
+- ✅ 필요한 기능은 다 있고, 혜택도 쏠쏠해요.
+
+**`및` / `등` as default connectors.** 및 is stiff 문어체 that rarely belongs in copy;
+`등` trailing every list is a report reflex. Use `~와/과`, `-고`, or just a comma.
+- ❌ 예약 및 결제, 알림 등의 기능을 지원합니다.
+- ✅ 예약하고 결제하고, 알림까지 챙겨 줘요.
+
+**`보다 더 ~` (comparative calque).** `보다` as a bare "more" adverb is translationese.
+- ❌ 보다 나은 경험을 제공하기 위해.
+- ✅ 더 나은 경험을 위해. / 좀 더 낫게 만들려고.
+
+**Hype verbs — `~을 자랑합니다` / `~로 유명합니다` / `~을 선사합니다`.** Boast calques.
+- ❌ 압도적인 성능을 자랑합니다. / 잊지 못할 경험을 선사합니다.
+- ✅ 성능은 확실해요. / 한번 쓰면 계속 쓰게 돼요.
+
 ---
 
 ## 2. 과한 정중함 · 상투어 — Over-politeness & clichés
@@ -126,6 +144,18 @@ short one or a fragment.
 **Technique:** after drafting, deliberately cut one sentence in half and let one
 line end on a noun. Rhythm is created by contrast, not by any single line.
 
+**Reach for a wider ending palette.** AI copy defaults to `~습니다` / `~요` and
+nothing else. Human Korean writing pulls from a much bigger set — deploy these to
+break monotony (register-appropriate):
+- **명사형 종결** — 하루가 조용해지는 경험. / 충전 걱정 없는 30시간.
+- **`~거든요`** (offering a reason, warm) — 저희가 좀 까다롭거든요.
+- **`~더라고요`** (shared discovery) — 써 보니 확실히 다르더라고요.
+- **`~잖아요`** (assumed agreement) — 매일 쓰는 거잖아요.
+- **`~죠` / `~하죠`** (soft assertion) — 이 정도면 충분하죠.
+- **`~고요` / `~고` 연결** to trail warmly — 알림도 새로 들어왔고요.
+These aren't slang; they're how real people write. One or two per piece, matched
+to the brand voice, does more than any single clever line.
+
 ---
 
 ## 4. 구조적 과잉 — Structural excess
@@ -185,6 +215,10 @@ two-line message in a tidy arc. Cut to the point.
 | 지금 바로 ~하세요! | 한 번만, 꼭 필요할 때 | limit ad clichés |
 | 첫째, 둘째, 셋째 | 자연스러운 나열 | drop ordinal scaffolding |
 | ~뿐만 아니라 ~도 | ~도 ~도 | loosen rigid parallelism |
+| 다양한 (반복) | (삭제) / 실제 대상 명시 | filler modifier |
+| 및 / ~ 등 | ~와/과, -고, 쉼표 | stiff 문어체 connectors |
+| 보다 나은 | 더 나은 | comparative calque |
+| ~을 자랑합니다 / 선사합니다 | 구체 서술로 | boast calques |
 
 
 ---

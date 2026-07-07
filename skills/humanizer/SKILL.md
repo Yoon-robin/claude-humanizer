@@ -123,6 +123,15 @@ fidelity pass:
 
 - **Protected spans untouched?** (see below) — byte-for-byte identical to source.
 - **Register held?** Same formality/speech level you locked in Step 1.
+- **Residual tells from the language file?** It's easy to fix four tells and miss
+  the fifth — re-scan the output against the specific patterns in the language
+  catalog. The balanced-parallelism family (#5) is the sneakiest: it survives in
+  *reworded* form (English "Whether you're X or Y," "From X to Y," a mid-sentence
+  antithesis around an em-dash; Korean a fresh 대구). If a line is still a tidy
+  seesaw, it isn't fixed yet.
+- **Does the rhythm actually vary?** Read the final copy back. If every sentence is
+  the same length — or it's one dense block where the format allows line breaks and
+  a short line — it flatlined. Break it up; let a line land short.
 - **Only as much change as the tells required?** If you rewrote a line that had no
   tell, you've drifted into "improving" the copy — a different job the user didn't
   ask for. Roll it back. Over-polishing is itself an AI tell: real editors leave

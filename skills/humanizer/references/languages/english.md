@@ -59,9 +59,25 @@ a signature. Break the symmetry or make a plain claim.
 - ❌ More than a product. A movement.
 - ✅ (delete — let the product speak)
 
-Related balanced-cleverness tics: "Whether you're X or Y…", "From X to Y…" as a
-default opener, and mirror-image sentence halves joined by an em-dash. Vary the
-shape; don't let every line be a tidy seesaw.
+These next three are the *reworded* survivors — they slip past a first pass
+because they don't use the literal "not just X, it's Y" words. Hunt them
+specifically before delivering.
+
+**"Whether you're X or Y."** A balanced framing that pretends to include everyone
+while saying nothing. Name the real audience or cut it.
+- ❌ Whether you're a student or a CEO, Nova keeps you organized.
+- ✅ Students use it to keep coursework straight. Teams use it to ship. *(or cut)*
+
+**"From X to Y" as a default opener/sweep.** The same fake-comprehensive seesaw.
+- ❌ From startups to enterprises, we've got you covered.
+- ✅ (delete — it says nothing) or name one concrete user.
+
+**Mid-sentence antithesis around an em-dash / comma.** "…, not an afterthought,"
+"…, not X — Y." reads as manufactured contrast.
+- ❌ Security was part of the plan from day one — not an afterthought.
+- ✅ Security was built in from day one.
+
+Vary the shape; don't let any line stay a tidy seesaw, even a reworded one.
 
 ## 3. Empty hype & filler openers
 
@@ -90,6 +106,9 @@ Phrases that fill space and signal "generic content" without saying anything.
   - ✅ Powerful without the learning curve.
 - **No questions or fragments.** Real copy uses both. A one-word line or a
   rhetorical question breaks the drone.
+- **One wall of text.** Even varied sentences read flat as a single dense block.
+  Marketing, social, and email copy breathe with line breaks and the occasional
+  one-line paragraph. Don't deliver a paragraph where the format allows air.
 
 ## 5. Punctuation & structural tells
 
