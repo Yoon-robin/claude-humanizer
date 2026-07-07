@@ -1,30 +1,54 @@
 # claude-humanizer
 
-Claude Agent Skills that make Claude's Korean copy read like a native human
-wrote it — not a machine translation and not an AI.
+A Claude Agent Skill that makes AI-written copy read like a native human wrote it
+— in **any language**, not a machine translation and not an AI.
 
-Korean written by AI is usually grammatically perfect and completely lifeless:
-every sentence the same length, every clause ending in `~습니다`, every idea
-padded with `번역투` and empty superlatives. Native readers feel it instantly.
-These skills strip those tells while preserving meaning, register, and brand
-voice.
+AI copy has a family resemblance everywhere: grammatically correct, tonally dead.
+The surface tells differ by language — English overuses em-dashes, "delve," and
+the "it's not just X, it's Y" flourish; Korean leans on 번역투 and a monotonous
+`~습니다` drumbeat — but the underlying failures are the same. This skill strips
+those tells while preserving meaning, register, and voice.
 
-## Skills
+## How it works
 
-| Skill | What it does |
-|---|---|
-| [`korean-humanizer`](skills/korean-humanizer/) | Rewrites any Korean copy — marketing, UI microcopy, SNS/blog, email — to sound naturally human. |
+One skill, a language-agnostic spine plus per-language catalogs:
 
-## What it fixes
+```
+skills/humanizer/
+├── SKILL.md                     ← universal workflow + the 5 cross-lingual tell families
+└── references/languages/
+    ├── korean.md                ← Korean tells, swaps, before/after examples
+    ├── english.md               ← English tells (delve, em-dash, antithesis, hype…)
+    └── _template.md             ← how to add a new language
+```
 
-- **번역투 · 직역체** — `~에 대해`, `~을 통해`, `~을 제공합니다`, overused `~들`, `당신`
-- **과한 정중함 · 상투어** — `많은 관심 부탁드립니다`, `완벽한`/`특별한`/`최고의`, `지금 바로 ~하세요!`
-- **밋밋한 리듬** — uniform sentence length, every line ending the same way
-- **구조적 과잉** — needless bullet lists, `첫째/둘째/셋째` signposting, forced parallelism
+The skill detects the target language and loads its catalog. **Languages without
+a dedicated file still work** — it falls back to the universal principles and
+native-level judgment (graceful degradation).
 
-See [`ai-tells.md`](skills/korean-humanizer/references/ai-tells.md) for the full
-catalog and [`examples.md`](skills/korean-humanizer/references/examples.md) for
-before/after copy in each format.
+## The 5 universal tell families
+
+1. **Translation-ese / calques** — structures imported from another language
+2. **Over-formality, deference & cliché padding** — hype and empty phrases
+3. **Flat rhythm** — uniform length and cadence (the most universal tell)
+4. **Structural excess** — bullets, signposting, and scaffolding forced onto copy
+5. **Slick symmetrical parallelism** — the too-perfect balanced line / antithesis
+
+Each language file makes these concrete. See
+[`english.md`](skills/humanizer/references/languages/english.md) and
+[`korean.md`](skills/humanizer/references/languages/korean.md).
+
+## Supported languages
+
+| Language | Catalog | Depth |
+|---|---|---|
+| English | [`english.md`](skills/humanizer/references/languages/english.md) | Full |
+| Korean | [`korean.md`](skills/humanizer/references/languages/korean.md) | Full |
+| Any other | — | Universal principles (graceful fallback) |
+
+Adding a language is a single file — copy
+[`_template.md`](skills/humanizer/references/languages/_template.md) to
+`<language>.md`, fill it in, and the skill picks it up. PRs welcome.
 
 ## Install
 
@@ -32,25 +56,25 @@ before/after copy in each format.
 
 ```bash
 # user-level (available in every project)
-cp -r skills/korean-humanizer ~/.claude/skills/
+cp -r skills/humanizer ~/.claude/skills/
 
 # or project-level
-cp -r skills/korean-humanizer .claude/skills/
+cp -r skills/humanizer .claude/skills/
 ```
 
-Restart Claude Code (or start a new session) and the skill loads automatically.
-It triggers whenever you write, translate, or polish Korean copy — or when you
-ask to make Korean text `자연스럽게` / `사람이 쓴 것처럼`.
+Start a new session and the skill loads automatically. It triggers whenever you
+write, translate, or polish copy — or when you ask to make text sound human /
+자연스럽게 / less "AI-ish."
 
-**Claude.ai / other surfaces** — upload the `korean-humanizer` folder as a skill
-wherever Agent Skills are supported.
+**Claude.ai / other surfaces** — upload the `humanizer` folder as a skill wherever
+Agent Skills are supported.
 
 ## Design principle
 
 The goal is **invisibility, not personality.** The skill does not add slang,
 jokes, or emoji to prove text is human — it removes the tells that mark it as
-machine-made and stops there. Over-correcting into forced casualness is treated
-as a new AI tell, not a fix. Register (명사형 / 해요체 / 습니다체 / 반말) is always
+machine-made and stops there. Over-correcting into forced casualness is treated as
+a new AI tell, not a fix. Register (formality, speech level, honorifics) is always
 preserved.
 
 ## License
