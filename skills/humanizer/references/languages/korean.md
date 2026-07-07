@@ -318,6 +318,31 @@ a real ask. Register stays polite (해요체) — humanized, not casualized.
 
 ---
 
+### Register drift (product & codebase copy)
+
+Register: whatever the *surrounding* copy already uses. This is the tell that only
+appears in context — a string that's fine on its own but out of step with its
+neighbors. It's the dominant tell in mature codebases, where old strings keep an
+old voice while newer ones move on.
+
+Context: a notification list where recent items are all 해요체 ("도전을 받아들였어요",
+"제출했어요"), but one legacy notification stayed 습니다체 with over-formal 2nd person.
+
+**Before (legacy drift):**
+> OO 님이 글의 회원님 댓글에 답글을 남겼습니다.
+
+**After:**
+> OO 님이 글에 남긴 내 댓글에 답글을 달았어요.
+
+Fixed: converged to the neighbors' 해요체 (`남겼습니다` → `달았어요`) and dropped the
+over-formal `회원님` (#2). This overlaps with #2 (over-politeness) and #3 (flat
+rhythm) — but the reason this 습니다체 is a tell isn't the sentence itself; it's that
+every notification around it is 해요체. In isolation you'd leave it; in context you
+fix it. The move is consistency recovery toward the surface's own register, not
+casualizing.
+
+---
+
 ### Calibration notes
 
 - **The formal cases still read formal.** Look at the email — it never drops into
@@ -329,3 +354,10 @@ a real ask. Register stays polite (해요체) — humanized, not casualized.
 - **Rhythm is the finish line.** In every "after," sentence lengths vary and at
   least one line lands short. If your rewrite is all medium sentences, it isn't
   done.
+- **Mostly-clean is the expected result in tidy copy.** In a codebase or product
+  that's already been cleaned once, most strings you scan will have no tell, and
+  the real ones are a small minority — often register drift (above), not classic
+  translation-ese. Don't manufacture finds to feel productive; that's the
+  no-overcorrect rule again. In one large production scan the classic 번역투
+  (`~을 통해` / `제공합니다` / `되어집니다` / `하시기 바랍니다`) appeared zero times across the
+  whole component tree — the real work was a handful of drift fixes.

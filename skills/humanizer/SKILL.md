@@ -79,6 +79,22 @@ language file describes its register system; if none exists, use your knowledge 
 the language. If the register itself is wrong for the context, flag it rather than
 quietly rewriting it.
 
+**Zoom out — check register consistency across the whole surface.** A string can
+be grammatically fine and carry no tell of its own, yet still read wrong because
+it drifts from the register of the copy *around* it. In product and codebase copy
+this is often the dominant shape of the problem: tells rarely look like one-off
+mis-writes and much more often like **legacy drift** — older strings keep an old
+voice while newer strings use the current one, so a single surface ends up mixed
+(most notifications in 해요체, one legacy notification in 습니다체; most admin labels
+`~관리해요`, two stragglers `~관리합니다`; three onboarding steps `~어요`, one `~있습니다`).
+Each looks defensible in isolation; side by side they're an obvious seam, and that
+seam is exactly what users feel as "off" or "AI-ish." Converge on the surface's
+established/dominant register. This is **consistency recovery, not casualizing** —
+returning the legacy 습니다체 notification to 해요체 restores the voice the surface
+already chose; it doesn't lower it. Diagnostic habit: for every string, don't only
+ask "is this a tell on its own?" — also ask "what voice do the neighboring strings
+on this screen, flow, or label group use?" The drift only shows up in the compare.
+
 ## Step 2 — Diagnose the tells
 
 These five families recur across languages. The language file gives concrete,

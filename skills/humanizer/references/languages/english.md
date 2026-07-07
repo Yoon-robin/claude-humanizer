@@ -135,6 +135,13 @@ Phrases that fill space and signal "generic content" without saying anything.
   - ✅ Our tool saves you about an hour a day.
 - **Manufactured enthusiasm** — exclamation points, "Exciting news!", "We're
   thrilled to…". Warmth is fine; inflation reads corporate. Say the thing plainly.
+- **House-tone drift across a surface.** Beyond any single tell, English product
+  copy reads "off" when neighboring strings disagree on tone — one button "Get
+  started," the next "Commence onboarding"; most microcopy contracted and warm, a
+  few strings stiff and formal. A string can be fine on its own yet wrong next to
+  its neighbors. Converge on the surface's established house tone (contractions or
+  not, warmth level, sentence case vs. Title Case). Consistency, not casualizing —
+  usually legacy drift, where older strings kept an older voice.
 
 ---
 
