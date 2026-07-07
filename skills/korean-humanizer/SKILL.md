@@ -51,6 +51,14 @@ Match the source. A push notification and a legal notice are not the same voice,
 and humanizing does not mean "make everything casual." If the register itself is
 wrong for the context, flag it to the user rather than quietly rewriting it.
 
+**One nuance — hold the speech level, not every ending.** What must stay fixed is
+politeness and formality: 존댓말 vs 반말, how deferential. What does *not* need to be
+rigidly uniform is the natural blend of 합니다체 and 해요체 inside polite writing.
+Real Korean writers mix them constantly ("...준비했습니다. 편하게 써 보세요."), and it
+reads warmer than copy where every sentence marches to the same `~습니다`. So keep
+the politeness level constant, but let the 합니다/해요 texture breathe — forcing a
+single ending throughout is itself a stiff, AI-ish move.
+
 ### 2. Diagnose the tells
 
 Read the draft against the four families of AI tells below. Most stiff Korean
@@ -87,6 +95,11 @@ that doesn't need it:
 - Bullet lists where flowing prose is natural
 - `첫째, 둘째, 셋째` / `먼저 ~ 다음으로 ~ 마지막으로` signposting
 - Rigid `~뿐만 아니라 ~도` parallelism
+- **Slick symmetrical 대구 (too-perfect parallelism).** A flawlessly balanced,
+  antithetical line — `소리는 지우고, 하루는 채우고`, tidy `A도 B도` — looks polished
+  but reads as manufactured cleverness, a 카피라이터/AI tell rather than how a person
+  actually talks. One immaculate parallel is a giveaway. Break the symmetry or let
+  one side go plain (`소음을 지우면 하루가 조용해져요`).
 - A mechanical intro-body-conclusion shape in three tidy sentences
 
 ### 3. Rewrite, then re-read
@@ -128,6 +141,10 @@ sit inside an otherwise awkward sentence. Rewrite the words around them instead.
 - URLs, email addresses, handles, hashtags, file names, and code
 - Legally or contractually required wording (disclaimers, terms, consent copy)
 - Standard industry acronyms readers expect in English (API, AI, UX, B2B …)
+- **Named features or spec keywords the brief highlights as selling points**
+  (액티브 노이즈캔슬링, 방수, 무선충전, 30시간 재생 …). Naturalize the words *around* the
+  term, but keep the term itself — paraphrasing "액티브 노이즈캔슬링" into "주변 소음을
+  덜어내는" strips a keyword the reader (and the marketer) came for.
 
 If naturalizing a sentence would require altering one of these, that's the signal
 to restructure the surrounding phrasing — not the protected span.
@@ -136,10 +153,16 @@ to restructure the surrounding phrasing — not the protected span.
 
 - **Preserve meaning and facts.** Never drop information, product claims, or
   legally required wording to make something flow better.
+- **Don't invent specifics to sound vivid.** Concreteness makes copy human, but
+  only when it's true. Adding a detail the source never stated — a physical
+  button, a named scene, a number — to feel more tangible is a fidelity break,
+  not a humanizing win. Draw vividness from what's actually given.
 - **Don't overcorrect.** Injecting slang, emoji, aegyo, or exclamation points
   that weren't warranted is a new AI tell, not a fix. When unsure, stay neutral.
-- **Keep the register.** Humanizing ≠ casualizing. A formal notice should still
-  read formal — just like a human wrote it, not a translation engine.
+- **Keep the speech level, not every ending.** Humanizing ≠ casualizing: hold
+  the politeness/formality (존댓말·반말) constant so a formal notice still reads
+  formal. But don't police the natural 합니다체/해요체 blend — mixing them the way a
+  real writer does is more human than one uniform ending, not less.
 - **Respect brand voice.** If earlier copy or a style guide establishes a voice,
   match it rather than imposing a generic "natural" tone.
 - **Whole copy, not word-by-word.** Naturalness comes from rhythm across

@@ -110,6 +110,10 @@ purpose.
 - ❌ 저희는 신선한 재료만 씁니다. 매일 아침 직접 굽습니다. 정성을 다합니다.
 - ✅ 신선한 재료만 씁니다. 매일 아침, 직접 굽고요. 그게 저희 방식이에요.
 
+Note the ✅ blends 씁니다 / 굽고요 / 방식이에요. Mixing 합니다체 and 해요체 within polite
+copy is a *fix*, not a new problem — real writers do it and it reads warm. Keep
+the politeness level steady; vary the endings freely.
+
 **Uniform length.** Three medium sentences in a row → break the pattern with a
 short one or a fragment.
 - ❌ 이 앱은 일정을 관리해 줍니다. 알림도 보내 줍니다. 통계도 제공합니다.
@@ -147,6 +151,16 @@ paragraph that doesn't need enumeration.
 connective.
 - ❌ 성능이 좋을 뿐만 아니라 디자인도 좋습니다.
 - ✅ 성능도 디자인도 잡았어요.
+
+**Slick symmetrical 대구 (too-perfect parallelism).** A flawlessly balanced,
+antithetical line looks polished but reads as manufactured cleverness — the move
+AI and lazy copywriters reach for, not how a person actually talks. One
+immaculate parallel is a tell. Break the symmetry, or let one side go plain. Note
+the fixes below are *not* just another tidy 대구.
+- ❌ 소리는 지우고, 하루는 채우고.
+- ✅ 소음을 지우면, 하루가 조용해져요.
+- ❌ 일할 땐 완벽하게, 쉴 땐 확실하게.
+- ✅ 집중해야 할 땐 확실히 잡아 줘요. 쉴 땐 그냥 편하게.
 
 **Three-part intro-body-conclusion in miniature.** AI loves wrapping even a
 two-line message in a tidy arc. Cut to the point.
