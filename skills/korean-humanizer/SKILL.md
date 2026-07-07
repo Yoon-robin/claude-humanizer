@@ -97,6 +97,41 @@ drop a particle, break a sentence, swap a Latinate calque for a plain verb, let
 a line end on a noun. Restraint beats cleverness — the best humanized copy looks
 like nobody edited it at all.
 
+### 4. Check yourself before delivering
+
+A humanizer that "improves" the wrong thing does real damage, so run a quick
+fidelity pass before handing the copy back:
+
+- **Protected spans untouched?** (see below) — proper nouns, numbers, prices, and
+  quotes must be byte-for-byte identical to the source.
+- **Register held?** The speech level you locked in step 1 is the same one you're
+  delivering. You didn't quietly drop 습니다체 into 반말.
+- **Only as much change as the tells required?** If you find you've rewritten a
+  line that had no tell, you've drifted into "improving" the copy — a different
+  job the user didn't ask for. Roll that back. Over-polishing is itself an AI
+  tell: real editors leave fine sentences alone.
+
+This isn't a rigid change-percentage rule — short marketing copy can legitimately
+be rewritten heavily, while a formal notice should barely move. The test is
+intent: every edit should trace to a specific tell, not to a vague urge to make
+it "better."
+
+## Protected spans — never rewrite these
+
+Naturalizing the *language* must never touch the *content*. The following are
+off-limits: leave them byte-for-byte as they appear in the source, even if they
+sit inside an otherwise awkward sentence. Rewrite the words around them instead.
+
+- Proper nouns: brand, product, model, company, and person names
+- Numbers, prices, dates, times, units, percentages, and measurements
+- Text inside direct quotation marks (`" "`, `' '`)
+- URLs, email addresses, handles, hashtags, file names, and code
+- Legally or contractually required wording (disclaimers, terms, consent copy)
+- Standard industry acronyms readers expect in English (API, AI, UX, B2B …)
+
+If naturalizing a sentence would require altering one of these, that's the signal
+to restructure the surrounding phrasing — not the protected span.
+
 ## Guardrails
 
 - **Preserve meaning and facts.** Never drop information, product claims, or
