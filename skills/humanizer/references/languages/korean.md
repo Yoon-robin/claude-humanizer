@@ -1,9 +1,10 @@
-# AI Tells in Korean — Catalog & Fixes
+# Korean — AI Tells, Fixes & Examples
 
-A detailed reference for `korean-humanizer`. Each entry names a tell, explains
-*why* it reads as machine-made, and gives before → after pairs. Work from these
-patterns, but always let the read-aloud test have the final word — context can
-make any "rule" the wrong call.
+Language-specific reference for the `humanizer` skill; load it when the target
+language is Korean. Each entry names a tell, explains *why* it reads as
+machine-made, and gives before → after pairs. Work from these patterns, but
+always let the read-aloud test have the final word — context can make any "rule"
+the wrong call.
 
 ## Contents
 
@@ -12,6 +13,7 @@ make any "rule" the wrong call.
 3. [밋밋한 리듬 — Flat rhythm](#3-밋밋한-리듬--flat-rhythm)
 4. [구조적 과잉 — Structural excess](#4-구조적-과잉--structural-excess)
 5. [Quick swap table](#5-quick-swap-table)
+6. [Worked examples by copy type](#6-worked-examples-by-copy-type)
 
 ---
 
@@ -223,16 +225,14 @@ two-line message in a tidy arc. Cut to the point.
 
 ---
 
-# End-to-End Before/After by Copy Type
+## 6. Worked examples by copy type
 
-Full worked examples for `korean-humanizer`. Each shows a realistic AI-drafted
-piece, the humanized rewrite, and the specific tells that were fixed. Use these
-to calibrate what "done" looks like in each format — the target register differs
-by context, and humanizing never means flattening everything to the same tone.
+Realistic AI-drafted pieces, their humanized rewrites, and the specific tells
+fixed. Use these to calibrate what "done" looks like per format — the target
+register differs by context, and humanizing never means flattening everything to
+one tone.
 
----
-
-## 1. Marketing / ad copy
+### Marketing / ad copy
 
 Register: usually 명사형 종결 or 해요체. Punchy, rhythmic, benefit-first.
 
@@ -249,7 +249,7 @@ Fixed: `최고의/완벽한/특별한` empty superlatives, `~을 제공하는`, 
 
 ---
 
-## 2. UI microcopy
+### UI microcopy
 
 Register: 해요체, short and functional. No hype, no padding. Clarity first, but
 still warm and human — not robotic.
@@ -277,7 +277,7 @@ Fixed: `존재하지 않습니다`, `~하시기 바랍니다`, over-formal `~하
 
 ---
 
-## 3. SNS / blog post
+### SNS / blog post
 
 Register: 해요체 or 반말 by brand. Conversational, opinionated, rhythm-heavy.
 Fragments and questions welcome.
@@ -297,7 +297,7 @@ casual brand voice supports it — not as proof-of-humanity.)
 
 ---
 
-## 4. Email / newsletter
+### Email / newsletter
 
 Register: 해요체 or 습니다체 depending on formality. Warmer than a notice, more
 structured than SNS. The trap here is the mechanical greeting-body-closing arc.
@@ -318,7 +318,7 @@ a real ask. Register stays polite (해요체) — humanized, not casualized.
 
 ---
 
-## Calibration notes
+### Calibration notes
 
 - **The formal cases still read formal.** Look at the email — it never drops into
   slang. Humanizing a 습니다체/해요체 piece means removing translation-ese and
