@@ -36,12 +36,22 @@ Adapt these to the language (some won't apply; add ones that are unique to it):
 
 ## Structure to follow
 
+A language gets two files, so a short fix doesn't pay for long examples:
+
+**`<language>.md` — the tells file** (read on every use)
+
 - Open with 2–3 sentences on this language's overall AI "fingerprint."
 - A `## Contents` list if the file gets long (>150 lines).
-- One `##` section per family, each with named entries and ❌/✅ pairs.
+- One `##` section per family, each with named entries and short ❌/✅ pairs.
 - A `## Quick swap table` for the highest-frequency fixes.
-- At least one `## Worked example` — a full AI-sounding paragraph and its
-  humanized rewrite, with a note on which tells were fixed and which protected
-  spans were preserved.
+- Keep it to rules and short pairs; full pieces go in the examples file.
 
-Look at `korean.md` and `english.md` as finished references before writing yours.
+**`<language>-examples.md` — worked examples** (read for longer copy)
+
+- At least one full AI-sounding piece and its humanized rewrite, with a note on
+  which tells were fixed and which protected spans were preserved.
+- Ideally one per copy type: marketing, UI microcopy, social, email, and a
+  register-drift case from product copy.
+
+Look at `korean.md` / `korean-examples.md` as the finished reference, and add an
+eval case under `evals/` that exercises the new language.

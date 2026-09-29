@@ -74,8 +74,10 @@ skills/humanizer/
 └── references/
     ├── codebase-scan.md           ← 제품 UI 문구를 훑는 방법
     └── languages/
-        ├── korean.md              ← 한국어 티, 바꿔 쓰기, 전후 예시
+        ├── korean.md              ← 한국어 티와 바꿔 쓰기 (매번 읽음)
+        ├── korean-examples.md     ← 한국어 전후 예시 (긴 글일 때만 읽음)
         ├── english.md             ← 영어 티 (delve, em-dash, 대구…)
+        ├── english-examples.md    ← 영어 전후 예시
         └── _template.md           ← 새 언어를 추가하는 방법
 evals/                             ← `claude plugin eval` 테스트 스위트
 .github/                           ← 푸시와 PR마다 도는 검증
@@ -86,9 +88,16 @@ evals/                             ← `claude plugin eval` 테스트 스위트
 
 | 언어 | 카탈로그 | 깊이 |
 |---|---|---|
+| 한국어 | [`korean.md`](skills/humanizer/references/languages/korean.md) | 전체, 중점적으로 다듬는 중 |
 | 영어 | [`english.md`](skills/humanizer/references/languages/english.md) | 전체 |
-| 한국어 | [`korean.md`](skills/humanizer/references/languages/korean.md) | 전체 |
 | 그 밖의 언어 | — | 공통 원칙으로 처리 |
+
+지금은 한국어를 중심으로 다듬고 있어요. 영어는 현재 수준을 유지하고, 다른 언어는
+공통 원칙으로 처리해요.
+
+짧은 문구를 고칠 때는 규칙 파일(`korean.md`)만 읽고, 전후 예시(`korean-examples.md`)는
+긴 글을 다듬을 때만 읽어요. 버튼 하나를 고치는 데 예시 전체를 불러오지 않도록 나눠
+둔 거예요.
 
 ## 설계 원칙
 
@@ -118,7 +127,13 @@ evals/                             ← `claude plugin eval` 테스트 스위트
 | `ko-humanize-newsletter`, `en-humanize-blurb` | AI 티 나는 카피를 다듬을 때 사실을 지키면서 티를 지웠는지 |
 | `ko-landing-copy` | 새 카피를 쓸 때 기능 이름을 살렸는지, 최상급 표현이나 매끈한 대구는 없는지 |
 | `ko-codebase-drift-review` | 작은 앱 픽스처를 훑을 때 뻔한 표류와 미묘한 표류(플레이스홀더 뒤 조사, 버튼 라벨 불일치, 다른 파일에 있는 푸시 문구)를 찾고, 멀쩡한 문구는 그대로 두는지 |
+| `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | 말투를 양쪽으로 지키는지: 격식 공지는 격식체로(날짜·시간은 그대로), 반말 브랜드 캡션은 반말로(억지 유행어나 이모지 없이) |
 | `neg-*` | 스킬이 **발동하면 안 되는** 요청: 맞춤법만 고치기, 뜻만 알면 되는 번역, AI 탐지 회피 |
+
+한 편짜리 카피 케이스는 요즘 모델이 스킬 없이도 잘 처리해서 baseline과 점수 차이가
+작을 수 있어요. 이런 케이스는 스킬이 결과를 오히려 나쁘게 만들지 않는지 지키는 용도예요.
+스킬의 차이가 가장 크게 드러나는 건 코드베이스 스윕에서 멀쩡한 문구를 건드리지 않고
+원래 뜻을 지키는 부분이에요.
 
 ```bash
 claude plugin eval .                            # 전체 스위트 + 스킬 없는 baseline과 비교

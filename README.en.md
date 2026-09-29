@@ -72,8 +72,10 @@ skills/humanizer/
 └── references/
     ├── codebase-scan.md           ← sweeping a product's UI strings
     └── languages/
-        ├── korean.md              ← Korean tells, swaps, before/after examples
+        ├── korean.md              ← Korean tells and swaps (read every time)
+        ├── korean-examples.md     ← Korean before/after pieces (longer copy only)
         ├── english.md             ← English tells (delve, em-dash, antithesis…)
+        ├── english-examples.md    ← English before/after piece
         └── _template.md           ← how to add a new language
 evals/                             ← test suite for `claude plugin eval`
 .github/                           ← checks that run on every push and PR
@@ -85,9 +87,16 @@ native-level judgment.
 
 | Language | Catalog | Depth |
 |---|---|---|
+| Korean | [`korean.md`](skills/humanizer/references/languages/korean.md) | Full, current focus |
 | English | [`english.md`](skills/humanizer/references/languages/english.md) | Full |
-| Korean | [`korean.md`](skills/humanizer/references/languages/korean.md) | Full |
 | Any other | — | Universal principles (graceful fallback) |
+
+Korean is the current focus. English is maintained as is, and other languages run
+on the universal principles.
+
+A short fix reads only the tells file; the before/after pieces in
+`<language>-examples.md` load for longer copy, so fixing one button doesn't pay
+for every example.
 
 ## Design principles
 
@@ -119,7 +128,13 @@ checks that it stays out.
 | `ko-humanize-newsletter`, `en-humanize-blurb` | Rewrites AI-sounding copy: facts kept, tells gone |
 | `ko-landing-copy` | Fresh copy: named features kept, no superlatives or slick 대구 |
 | `ko-codebase-drift-review` | Sweep of a small app fixture: obvious drift, subtle drift (particle after a placeholder, mixed button labels, a push message in another file), and restraint |
+| `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
 | `neg-*` | Requests the skill must **not** take: spelling-only fixes, comprehension-only translation, AI-detector evasion |
+
+Current models handle a single piece of copy well even without the skill, so the
+single-piece cases may show a small gap against the baseline. They guard against
+the skill making things worse. The skill's clearest effect shows up in codebase
+sweeps: leaving clean strings alone and keeping the original meaning.
 
 ```bash
 claude plugin eval .                            # full suite, with a no-plugin baseline

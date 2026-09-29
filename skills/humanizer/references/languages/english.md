@@ -161,24 +161,3 @@ Phrases that fill space and signal "generic content" without saying anything.
 | Firstly / In conclusion | (delete) | signposting |
 | you will / do not (casual) | you'll / don't | add contractions |
 | can help you potentially | states the benefit | drop the hedge |
-
----
-
-## Worked example
-
-**Before (AI):**
-> In today's fast-paced world, staying focused is harder than ever. That's why we
-> built Focus — a robust, seamless, and intuitive tool designed to help you unlock
-> your full potential. It's not just a timer. It's a whole new way to work.
-> Whether you're a student or a CEO, Focus empowers you to do more!
-
-**After (human):**
-> Staying focused is hard when everything's fighting for your attention. Focus is a
-> timer that actually helps — it blocks the noise, tracks your deep-work hours, and
-> gets out of the way. Students use it to study. Founders use it to ship. Give it a
-> week.
-
-Fixed: filler opener, hype stack (robust/seamless/intuitive), "unlock your
-potential," the "it's not just X, it's Y" antithesis, "Whether you're X or Y,"
-"empowers," and the exclamation — replaced with concrete benefit and varied rhythm.
-The product name "Focus" (a protected span) is untouched.

@@ -37,8 +37,13 @@ Detect the language of the copy (or the language the user asked you to write in)
 Then:
 
 - If `references/languages/<language>.md` exists, **read it** — it holds the
-  concrete tells, word-level swaps, register system, and worked examples for that
-  language. Bundled today: `korean.md`, `english.md`.
+  concrete tells, word-level swaps, and register notes for that language. Bundled
+  today: `korean.md`, `english.md`.
+- Full before/after pieces live in `<language>-examples.md`. Read them for longer
+  copy or when you're unsure how far a rewrite should go. Skip them for a short
+  fix like a button or a toast, and for a codebase sweep, where
+  `references/codebase-scan.md` carries its own examples; the tells file is
+  enough.
 - If there is **no file for that language**, don't stop — apply the universal
   families below using your own native-level judgment of that language, plus the
   same guardrails. The skill degrades gracefully: it works for any language, just
@@ -213,6 +218,6 @@ commentary nobody asked for. For a codebase sweep, deliver a findings report
 (location, before, after, why) plus a short list of what you flagged but left
 alone — see `references/codebase-scan.md`.
 
-For the deep per-language catalog (concrete tells, swaps, before/after examples),
-read the matching file in `references/languages/`. To add support for a new
-language, follow `references/languages/_template.md`.
+For the per-language catalogs (concrete tells and swaps in `<language>.md`,
+before/after pieces in `<language>-examples.md`), see `references/languages/`. To
+add support for a new language, follow `references/languages/_template.md`.
