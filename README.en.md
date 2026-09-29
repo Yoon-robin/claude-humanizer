@@ -29,8 +29,13 @@ claude plugin install humanizer@claude-humanizer
 
 Start a new session. The skill triggers on its own when you write, translate, or
 polish copy, or when you ask to make text sound human / 자연스럽게 / less "AI-ish."
-To call it explicitly, run `/humanizer:humanizer`. Get updates with
-`claude plugin update humanizer@claude-humanizer`.
+To call it explicitly, run `/humanizer:humanizer`. To update, run these two
+commands and start a new session:
+
+```bash
+claude plugin marketplace update claude-humanizer
+claude plugin update humanizer@claude-humanizer
+```
 
 > If you installed an earlier version by copying `skills/humanizer` into
 > `~/.claude/skills/`, delete that copy so you don't load the skill twice.

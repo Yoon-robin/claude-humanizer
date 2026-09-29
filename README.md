@@ -29,8 +29,13 @@ claude plugin install humanizer@claude-humanizer
 
 새 세션을 열면 바로 쓸 수 있어요. 카피를 쓰거나 번역하거나 다듬을 때, 또는
 "자연스럽게 고쳐줘", "AI 티 안 나게 해줘"라고 하면 알아서 발동해요. 직접 부르고
-싶으면 `/humanizer:humanizer`를 입력하세요. 업데이트는
-`claude plugin update humanizer@claude-humanizer`로 받아요.
+싶으면 `/humanizer:humanizer`를 입력하세요. 업데이트는 아래 두 줄로 받고, 받은
+뒤에는 새 세션을 열어 주세요.
+
+```bash
+claude plugin marketplace update claude-humanizer
+claude plugin update humanizer@claude-humanizer
+```
 
 > 예전에 `skills/humanizer`를 `~/.claude/skills/`에 직접 복사해서 설치했다면 그
 > 폴더는 지워 주세요. 그대로 두면 스킬이 두 번 로드돼요.
