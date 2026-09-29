@@ -188,6 +188,13 @@ sentence — rewrite the words around them instead:
 - **Don't invent specifics to sound vivid.** Concreteness makes copy human, but
   only when it's true. Adding a detail the source never stated — a scene, a
   number, a mechanism — is a fidelity break, not a humanizing win.
+- **Keep each term's scope.** Don't narrow or widen what a word covers to make it
+  sound friendlier: "saved items" isn't "saved posts," and 항목 isn't 글. If the
+  source is generic, stay generic; if you suspect the narrower word is what the
+  product means, flag it instead of swapping it.
+- **Keep the product's punctuation and quoting style.** Brackets and quote marks
+  around names and placeholders (`「${title}」`, `"…"`) are house style, not a
+  tell. Restyling them is an edit nobody asked for.
 - **Don't overcorrect.** Injecting slang, emoji, or exclamation points that
   weren't warranted is a new AI tell, not a fix. When unsure, stay neutral.
 - **Keep the speech/formality level**, but don't police natural in-register

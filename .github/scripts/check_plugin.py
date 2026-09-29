@@ -1,0 +1,113 @@
+"""Repo checks for the humanizer plugin. Runs in CI and works locally before a push.
+
+1. The plugin and marketplace manifests parse, and the marketplace entry's name
+   matches the plugin manifest's name. A mismatch breaks installs.
+2. Every SKILL.md description is at most 1,024 characters, the Agent Skills
+   limit. Surfaces that enforce it reject the skill.
+3. With --base <ref>: if anything users receive changed since <ref>, the version
+   in .claude-plugin/plugin.json must differ from <ref>'s. Installs are pinned to
+   that version, so an unbumped change never reaches them.
+
+Usage:
+    python .github/scripts/check_plugin.py [--base <git ref>]
+"""
+
+import argparse
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+PLUGIN_JSON = ".claude-plugin/plugin.json"
+MARKETPLACE_JSON = ".claude-plugin/marketplace.json"
+DESCRIPTION_LIMIT = 1024
+# Changes under these paths reach people who install the plugin.
+SHIPPED_PREFIXES = ("skills/", PLUGIN_JSON)
+
+
+def read_description(skill_md: Path) -> str:
+    """Return the frontmatter description, folded the way YAML folds `>` blocks."""
+    text = skill_md.read_text(encoding="utf-8")
+    match = re.match(r"---\n(.*?)\n---", text, re.S)
+    if not match:
+        raise ValueError("no frontmatter")
+    lines = match.group(1).splitlines()
+    for i, line in enumerate(lines):
+        if not line.startswith("description:"):
+            continue
+        value = line[len("description:"):].strip()
+        if value not in (">", ">-", "|", "|-"):
+            return value.strip("\"'")
+        block = []
+        for follow in lines[i + 1:]:
+            if follow and not follow.startswith((" ", "\t")):
+                break
+            block.append(follow.strip())
+        joiner = "\n" if value.startswith("|") else " "
+        return joiner.join(part for part in block if part)
+    raise ValueError("no description field")
+
+
+def git(*args: str) -> str:
+    return subprocess.run(
+        ["git", *args], cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8"
+    ).stdout
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--base", help="git ref to compare against for the version-bump check")
+    args = parser.parse_args()
+    errors = []
+
+    # 1. Manifests
+    plugin = json.loads((ROOT / PLUGIN_JSON).read_text(encoding="utf-8"))
+    marketplace = json.loads((ROOT / MARKETPLACE_JSON).read_text(encoding="utf-8"))
+    entry_names = [entry.get("name") for entry in marketplace.get("plugins", [])]
+    if plugin.get("name") not in entry_names:
+        errors.append(
+            f"plugin.json name {plugin.get('name')!r} has no matching entry in marketplace.json {entry_names}"
+        )
+    print(f"manifests: plugin {plugin.get('name')} {plugin.get('version')}")
+
+    # 2. Description length
+    for skill_md in sorted((ROOT / "skills").glob("*/SKILL.md")):
+        rel = skill_md.relative_to(ROOT).as_posix()
+        try:
+            length = len(read_description(skill_md))
+        except ValueError as exc:
+            errors.append(f"{rel}: {exc}")
+            continue
+        status = "ok" if length <= DESCRIPTION_LIMIT else "TOO LONG"
+        print(f"description: {rel} {length}/{DESCRIPTION_LIMIT} chars {status}")
+        if length > DESCRIPTION_LIMIT:
+            errors.append(f"{rel}: description is {length} chars, over the {DESCRIPTION_LIMIT} limit")
+
+    # 3. Version bump
+    if args.base:
+        changed = [p for p in git("diff", "--name-only", args.base).splitlines() if p]
+        shipped = [p for p in changed if p.startswith(SHIPPED_PREFIXES)]
+        if shipped:
+            try:
+                base_version = json.loads(git("show", f"{args.base}:{PLUGIN_JSON}")).get("version")
+            except subprocess.CalledProcessError:
+                base_version = None  # the base predates the plugin manifest
+            if base_version is not None and base_version == plugin.get("version"):
+                errors.append(
+                    f"shipped files changed since {args.base} ({', '.join(shipped)}) but the version is "
+                    f"still {base_version}; bump it in {PLUGIN_JSON}"
+                )
+            else:
+                print(f"version: {base_version} -> {plugin.get('version')} ok")
+        else:
+            print(f"version: no shipped files changed since {args.base}")
+
+    for error in errors:
+        print(f"ERROR: {error}", file=sys.stderr)
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
