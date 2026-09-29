@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: ko-codebase-drift-review
+description: >-
+  Review-only sweep of a small Korean app across a locale file, a React
+  component, and server push code. Five strings are obvious 습니다체 drift; three
+  are subtle (a particle glued to a placeholder, a mixed button-label ending,
+  and a push notification in another file that drifts from its in-app twin).
+  Everything else is clean, including a formal legal surface that must not be
+  casualized, placeholders that must survive, and a developer log and a code
+  comment that aren't user-facing copy.
+expected_outcome: >-
+  Flags the five obvious drifts and at least two of the three subtle issues;
+  keeps every placeholder ({name}, {count}, ${actor}, ${postTitle}); leaves the
+  legal strings, clean strings, console.error, and code comment alone.
+context:
+  add_dirs: [resources]

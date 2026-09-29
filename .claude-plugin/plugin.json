@@ -1,0 +1,24 @@
+{
+  "name": "humanizer",
+  "displayName": "Humanizer",
+  "version": "1.0.0",
+  "description": "Makes AI-written copy read like a native human wrote it, in any language. Deep catalogs for Korean and English, plus a sweep workflow for a product's UI strings.",
+  "author": {
+    "name": "Yoon-robin",
+    "url": "https://github.com/Yoon-robin"
+  },
+  "homepage": "https://github.com/Yoon-robin/claude-humanizer",
+  "repository": "https://github.com/Yoon-robin/claude-humanizer",
+  "license": "MIT",
+  "keywords": [
+    "humanize",
+    "copywriting",
+    "ux-writing",
+    "microcopy",
+    "i18n",
+    "korean",
+    "english",
+    "번역투",
+    "자연스럽게"
+  ]
+}

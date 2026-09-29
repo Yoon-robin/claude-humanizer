@@ -1,0 +1,14 @@
+{
+  "name": "claude-humanizer",
+  "description": "The humanizer skill for Claude Code: natural, native-sounding copy in any language",
+  "owner": {
+    "name": "Yoon-robin"
+  },
+  "plugins": [
+    {
+      "name": "humanizer",
+      "source": "./",
+      "description": "Makes AI-written copy read like a native human wrote it, in any language."
+    }
+  ]
+}

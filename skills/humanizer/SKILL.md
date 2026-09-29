@@ -1,22 +1,18 @@
 ---
 name: humanizer
 description: >-
-  Rewrites AI-written copy in ANY language so it reads like a native human wrote
-  it — not a machine translation and not an AI. Use whenever you produce or edit
-  copy that should sound human: marketing and ad copy, landing pages, UI
-  microcopy (buttons, toasts, empty states, errors), push notifications,
-  social/blog posts, emails, or newsletters — in English, Korean, Japanese,
-  Chinese, Spanish, or any other language. Trigger on any request to write,
-  translate, polish, or naturalize text, and whenever output sounds stiff,
-  translated, robotic, over-formal, or "AI-ish" — e.g. English "delve / tapestry
-  / it's not just X, it's Y" and em-dash overuse, or Korean 번역투·직역체·상투어. Also
-  trigger when the user says the text "sounds like AI/ChatGPT wrote it" or asks
-  to make it natural / sound human / 자연스럽게 / 사람이 쓴 것처럼. Not for one-line
-  politeness tweaks, generating fresh content from scratch, comprehension-only
-  translation, spelling/grammar-only fixes, or evading AI-detection tools — those
-  are different tasks. Deep language-specific catalogs live in
-  references/languages/; the universal principles below apply even to languages
-  without a dedicated file.
+  Makes AI-written copy read like a native human wrote it, in any language
+  (English, Korean, Japanese, Spanish, …). Use whenever you write or edit copy
+  people will read: marketing and ad copy, landing pages, UI microcopy (buttons,
+  toasts, empty states, errors), push notifications, social posts, emails,
+  newsletters — and when sweeping a codebase's UI strings (locale/i18n files, JSX
+  text, notification templates) for stiff or inconsistent copy. Trigger on
+  requests to write, translate, polish, or naturalize text, and whenever output
+  sounds stiff, translated, over-formal, or AI-ish (English "delve," "it's not
+  just X, it's Y," em-dash overuse; Korean 번역투·직역체·상투어), or the user says it
+  "sounds like AI/ChatGPT" or asks to make it natural / 자연스럽게 / 사람이 쓴 것처럼.
+  Not for spelling-only fixes, comprehension-only translation, one-line
+  politeness tweaks, researching long-form articles, or evading AI detectors.
 ---
 
 # Humanizer
@@ -49,6 +45,10 @@ Then:
   with less bundled detail. (If you find yourself repeatedly humanizing a
   language with no file, consider writing one — see
   `references/languages/_template.md`.)
+- If the job is a **sweep over many strings** — a codebase's locale files, JSX
+  text, notification templates — also read `references/codebase-scan.md`. The
+  tells are the same, but the workflow differs: inventory, group by surface, set
+  each surface's register, edit minimally, and report.
 
 ## The one test that matters: read it aloud
 
@@ -170,6 +170,10 @@ sentence — rewrite the words around them instead:
 - Numbers, prices, dates, times, units, percentages, and measurements
 - Text inside direct quotation marks
 - URLs, email addresses, handles, hashtags, file names, and code
+- Interpolation and markup inside strings — placeholders and template syntax
+  (`{name}`, `{{count}}`, `%s`, `${user}`, ICU `{n, plural, …}`), HTML/JSX tags,
+  and i18n keys. Restructure the sentence around them; a renamed or dropped
+  placeholder is a shipped bug, not a style choice.
 - Legally or contractually required wording (disclaimers, terms, consent copy)
 - Standard industry acronyms readers expect (API, AI, UX, B2B …)
 - **Named features or spec keywords the brief highlights as selling points.**
@@ -198,7 +202,9 @@ sentence — rewrite the words around them instead:
 Default to returning just the rewritten copy — clean, ready to paste. When the
 user is clearly iterating or learning (they ask *why*, or want options), briefly
 name the main tells you fixed and offer a variant. Don't bury a good rewrite under
-commentary nobody asked for.
+commentary nobody asked for. For a codebase sweep, deliver a findings report
+(location, before, after, why) plus a short list of what you flagged but left
+alone — see `references/codebase-scan.md`.
 
 For the deep per-language catalog (concrete tells, swaps, before/after examples),
 read the matching file in `references/languages/`. To add support for a new
