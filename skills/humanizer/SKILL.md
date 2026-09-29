@@ -18,206 +18,135 @@ description: >-
 # Humanizer
 
 AI-written copy has a family resemblance in every language: grammatically
-correct, tonally dead. The surface tells differ — English overuses em-dashes,
-"delve," and the "it's not just X, it's Y" flourish; Korean leans on 번역투 and a
-monotonous `~습니다` drumbeat — but the underlying failures are the same
-everywhere. Native readers feel it instantly even when they can't name why. This
-skill's job is to make that feeling go away: to produce copy indistinguishable
-from something a good writer in that language wrote by hand.
+correct, tonally dead. The surface tells differ (English leans on em-dashes,
+"delve," and "it's not just X, it's Y"; Korean on 번역투 and a monotonous
+`~습니다`), but the failures underneath are the same, and native readers feel them
+even when they can't name them. Your job is copy a good native writer could have
+written by hand.
 
-The goal is **invisibility, not personality.** You are not adding slang, jokes,
-or emoji to prove the text is human. You are removing the tells that mark it as
-machine-made while preserving the meaning, the register, and the voice exactly.
-Over-correcting into forced casualness is just as wrong as the stiff original,
-in any language.
+The goal is **invisibility, not personality.** Don't add slang, jokes, or emoji to
+prove the text is human. Remove the tells that mark it as machine-made, and keep
+the meaning, register, and voice exactly. Forced casualness is as wrong as the
+stiff original.
 
-## Step 0 — Identify the language and load its catalog
+## Step 0 — Load what the job needs
 
-Detect the language of the copy (or the language the user asked you to write in).
-Then:
+- Detect the language of the copy (or the one you're asked to write in) and read
+  `references/languages/<language>.md`: its tells, swaps, and register notes.
+  Bundled: `korean.md`, `english.md`.
+- `<language>-examples.md` holds full before/after pieces. Read it for longer copy
+  or when you're unsure how far to go. Skip it for a short fix (a button, a toast)
+  and for sweeps.
+- No file for the language? Apply the families below with native-level judgment
+  and the same guardrails. If a language keeps coming up, write a file from
+  `references/languages/_template.md`.
+- A **sweep over many strings** (locale files, JSX text, notification templates)?
+  Also read `references/codebase-scan.md`: inventory, group by surface, set each
+  surface's register, edit minimally, report.
 
-- If `references/languages/<language>.md` exists, **read it** — it holds the
-  concrete tells, word-level swaps, and register notes for that language. Bundled
-  today: `korean.md`, `english.md`.
-- Full before/after pieces live in `<language>-examples.md`. Read them for longer
-  copy or when you're unsure how far a rewrite should go. Skip them for a short
-  fix like a button or a toast, and for a codebase sweep, where
-  `references/codebase-scan.md` carries its own examples; the tells file is
-  enough.
-- If there is **no file for that language**, don't stop — apply the universal
-  families below using your own native-level judgment of that language, plus the
-  same guardrails. The skill degrades gracefully: it works for any language, just
-  with less bundled detail. (If you find yourself repeatedly humanizing a
-  language with no file, consider writing one — see
-  `references/languages/_template.md`.)
-- If the job is a **sweep over many strings** — a codebase's locale files, JSX
-  text, notification templates — also read `references/codebase-scan.md`. The
-  tells are the same, but the workflow differs: inventory, group by surface, set
-  each surface's register, edit minimally, and report.
+## Read it aloud
 
-## The one test that matters: read it aloud
+Before and after every rewrite, hear the text as a native speaker would say it to
+a real audience. Human copy has a pulse: a short line, a longer one, a fragment, a
+question. AI copy flatlines. If the rhythm drones or a phrase would never leave a
+native speaker's mouth, it isn't done. This catches more than any checklist.
 
-Before and after every rewrite, read the text out loud in your head **as a native
-speaker of that language** would say or write it to a real audience. Human copy
-has a pulse — short line, longer line, a fragment, a question. AI copy flatlines.
-If the rhythm is monotonous or a phrase would never leave a native speaker's
-mouth, it isn't done yet. This instinct catches more than any checklist, and it
-transfers across every language.
+## Step 1 — Lock the register
 
-## Step 1 — Lock the register before touching anything
+Each language encodes formality its own way: English contractions and house tone;
+Korean 존댓말/반말 and the 합니다체/해요체 texture; Japanese です・ます vs. plain form and
+keigo; tu/usted, tu/vous, du/Sie. Identify what the copy uses and **hold it.**
+Humanizing isn't casualizing, so a formal notice still reads formal. The
+politeness level stays fixed; natural in-register variation (mixing 합니다체 and
+해요체, contractions in English) is welcome. If the register itself is wrong for
+the context, flag it instead of quietly changing it.
 
-Every language encodes formality and social distance differently, and the biggest
-humanizing mistake is silently changing it:
-
-- **English** — formality and contractions (you'll vs. you will), house tone
-  (buttoned-up B2B vs. friendly consumer), how much warmth is appropriate.
-- **Korean** — speech level (존댓말/반말) and the 합니다체/해요체 texture.
-- **Japanese** — です・ます vs. plain form; keigo level.
-- **Spanish / French / German** — tú/usted, tu/vous, du/Sie.
-
-Identify the system the copy is using and **hold it.** Humanizing ≠ casualizing:
-a formal notice should still read formal — just like a human wrote it, not a
-translation engine. What must stay fixed is the *politeness/formality level*; what
-does *not* need to be rigidly uniform is the natural in-register variation a real
-writer uses (mixing 합니다체/해요체 in Korean, or contractions in English). The
-language file describes its register system; if none exists, use your knowledge of
-the language. If the register itself is wrong for the context, flag it rather than
-quietly rewriting it.
-
-**Zoom out — check register consistency across the whole surface.** A string can
-be grammatically fine and carry no tell of its own, yet still read wrong because
-it drifts from the register of the copy *around* it. In product and codebase copy
-this is often the dominant shape of the problem: tells rarely look like one-off
-mis-writes and much more often like **legacy drift** — older strings keep an old
-voice while newer strings use the current one, so a single surface ends up mixed
-(most notifications in 해요체, one legacy notification in 습니다체; most admin labels
-`~관리해요`, two stragglers `~관리합니다`; three onboarding steps `~어요`, one `~있습니다`).
-Each looks defensible in isolation; side by side they're an obvious seam, and that
-seam is exactly what users feel as "off" or "AI-ish." Converge on the surface's
-established/dominant register. This is **consistency recovery, not casualizing** —
-returning the legacy 습니다체 notification to 해요체 restores the voice the surface
-already chose; it doesn't lower it. Diagnostic habit: for every string, don't only
-ask "is this a tell on its own?" — also ask "what voice do the neighboring strings
-on this screen, flow, or label group use?" The drift only shows up in the compare.
+**Zoom out to the surface.** A string with no tell of its own can still be wrong
+because it drifts from the copy around it. In product and codebase copy this is
+often the main problem: **legacy drift**, where old strings keep an old voice (one
+습니다체 notification in a 해요체 feed, two `~관리합니다` labels among `~관리해요`).
+Converge on the surface's established register. That's **consistency recovery,
+not casualizing**: you restore the voice the surface already chose. For every
+string, ask both "is this a tell on its own?" and "what voice do its neighbors on
+this screen, flow, or label row use?"
 
 ## Step 2 — Diagnose the tells
 
-These five families recur across languages. The language file gives concrete,
-language-specific patterns and swaps — go there for those. Here is what to hunt
-for in **any** language:
+Five families recur in every language; the language file has the concrete
+patterns.
 
-1. **Translation-ese / calques.** Structures, idioms, and word order imported
-   from another language (usually English, or from the source in a translation).
-   Correct, but not what a native writer would reach for. *(EN: literal renderings,
-   "in order to," nominalization pile-ups. KO: `~에 대해`, `~을 통해`, `~을 제공합니다`.)*
-
-2. **Over-formality, deference & cliché padding.** Hype words and empty phrases
-   that add register or excitement but no meaning. *(EN: "revolutionary,"
-   "seamless," "world-class," "in today's fast-paced world," "unlock," "elevate."
-   KO: `완벽한`, `최고의`, `많은 관심 부탁드립니다`.)*
-
-3. **Flat rhythm** — the most universal tell of all. Uniform sentence length,
-   every sentence the same shape or ending, no fragments, no questions. Humans
-   vary length and cadence on purpose; AI flatlines. Fix by cutting, splitting,
-   and letting some lines land short.
-
-4. **Structural excess.** Essay scaffolding forced onto copy that should just
-   flow: needless bullet lists, "Firstly / Secondly / Finally" signposting, bold
-   headers and emoji on short copy, a tidy rule-of-three on every line.
-
-5. **Slick symmetrical parallelism / antithesis** — the too-perfect balanced
-   line. In English this is the signature tic: *"It's not just X — it's Y,"*
-   *"This isn't about X. It's about Y."* In Korean, the neat 대구
-   (`소리는 지우고, 하루는 채우고`). One immaculate parallel reads as manufactured
-   cleverness — an AI/copywriter tell in any language. Break the symmetry, or let
-   one side go plain.
+1. **Translation-ese / calques** — structures imported from another language.
+   (EN "in order to," noun pile-ups; KO `~에 대해`, `~을 통해`, `~을 제공합니다`)
+2. **Over-formality & cliché padding** — hype and empty phrases that add register,
+   not meaning. (EN "seamless," "unlock," "in today's fast-paced world"; KO
+   `완벽한`, `최고의`, `많은 관심 부탁드립니다`)
+3. **Flat rhythm** — the most universal tell: uniform length and endings, no
+   fragments or questions. Cut, split, let a line land short.
+4. **Structural excess** — essay scaffolding on copy: needless bullets, "Firstly /
+   Finally," bold headers and emoji on short copy, a rule-of-three on every line.
+5. **Slick parallelism / antithesis** — the too-perfect balanced line: EN "It's
+   not just X, it's Y"; KO 대구 like `소리는 지우고, 하루는 채우고`. Break the symmetry
+   or let one side go plain.
 
 ## Step 3 — Rewrite, then re-read
 
-Fix the tells while holding meaning and register constant. Then apply the
-read-aloud test again. Prefer the change a good writer in that language would
-make: cut a filler word, break a sentence, swap a calque for a plain verb, let a
-line end short. Restraint beats cleverness — the best humanized copy looks like
-nobody edited it at all.
+Fix the tells while meaning and register stay put, then read it aloud again. Make
+the edit a good native writer would: cut filler, split a sentence, swap a calque
+for a plain verb. Restraint beats cleverness; the best result looks unedited.
 
-## Step 4 — Check yourself before delivering
+## Step 4 — Check before delivering
 
-A humanizer that "improves" the wrong thing does real damage, so run a quick
-fidelity pass:
+- **Protected spans** (below) are byte-for-byte identical to the source.
+- **Register** matches what you locked in Step 1.
+- **No residual tells.** Re-scan against the language file; it's easy to fix four
+  and miss the fifth. Parallelism survives rewording (EN "Whether you're X or Y,"
+  "From X to Y," an antithesis around an em-dash; KO a fresh 대구). If a line
+  still seesaws, it isn't fixed.
+- **Rhythm varies.** Not every sentence the same length, and not one dense block
+  where the format allows line breaks.
+- **Every edit traces to a tell.** Rewriting a fine line is "improving," a job
+  nobody asked for, and over-polishing is itself a tell, so roll it back. This
+  isn't a change-percentage rule: short marketing copy may change a lot, a formal
+  notice barely.
 
-- **Protected spans untouched?** (see below) — byte-for-byte identical to source.
-- **Register held?** Same formality/speech level you locked in Step 1.
-- **Residual tells from the language file?** It's easy to fix four tells and miss
-  the fifth — re-scan the output against the specific patterns in the language
-  catalog. The balanced-parallelism family (#5) is the sneakiest: it survives in
-  *reworded* form (English "Whether you're X or Y," "From X to Y," a mid-sentence
-  antithesis around an em-dash; Korean a fresh 대구). If a line is still a tidy
-  seesaw, it isn't fixed yet.
-- **Does the rhythm actually vary?** Read the final copy back. If every sentence is
-  the same length — or it's one dense block where the format allows line breaks and
-  a short line — it flatlined. Break it up; let a line land short.
-- **Only as much change as the tells required?** If you rewrote a line that had no
-  tell, you've drifted into "improving" the copy — a different job the user didn't
-  ask for. Roll it back. Over-polishing is itself an AI tell: real editors leave
-  fine sentences alone.
+## Protected spans — never rewrite
 
-This isn't a rigid change-percentage rule — short marketing copy can be rewritten
-heavily, while a formal notice should barely move. The test is intent: every edit
-should trace to a specific tell.
-
-## Protected spans — never rewrite these
-
-Naturalizing the *language* must never touch the *content*. Leave these
-byte-for-byte as they appear in the source, even inside an otherwise awkward
-sentence — rewrite the words around them instead:
+Naturalize the language, never the content. Keep these byte-for-byte, even inside
+an awkward sentence, and rewrite around them:
 
 - Proper nouns: brand, product, model, company, and person names
-- Numbers, prices, dates, times, units, percentages, and measurements
-- Text inside direct quotation marks
-- URLs, email addresses, handles, hashtags, file names, and code
-- Interpolation and markup inside strings — placeholders and template syntax
-  (`{name}`, `{{count}}`, `%s`, `${user}`, ICU `{n, plural, …}`), HTML/JSX tags,
-  and i18n keys. Restructure the sentence around them; a renamed or dropped
-  placeholder is a shipped bug, not a style choice.
-- Legally or contractually required wording (disclaimers, terms, consent copy)
-- Standard industry acronyms readers expect (API, AI, UX, B2B …)
-- **Named features or spec keywords the brief highlights as selling points.**
-  Naturalize the words *around* the term, but keep the term itself — paraphrasing
-  a named feature (English "active noise cancellation," Korean "액티브 노이즈캔슬링")
-  into a generic description strips a keyword the reader came for.
+- Numbers, prices, dates, times, units, percentages, measurements
+- Text in direct quotation marks
+- URLs, emails, handles, hashtags, file names, code
+- Placeholders and markup: `{name}`, `{{count}}`, `%s`, `${user}`, ICU
+  `{n, plural, …}`, HTML/JSX tags, i18n keys. A renamed or dropped placeholder is
+  a shipped bug.
+- Legal and contractual wording (disclaimers, terms, consent copy)
+- Standard acronyms (API, AI, UX, B2B …)
+- **Feature names and spec keywords the brief sells on** (EN "active noise
+  cancellation," KO "액티브 노이즈캔슬링"): keep the term, rewrite around it.
 
 ## Guardrails
 
-- **Preserve meaning and facts.** Never drop information, product claims, or
-  legally required wording to make something flow better.
-- **Don't invent specifics to sound vivid.** Concreteness makes copy human, but
-  only when it's true. Adding a detail the source never stated — a scene, a
-  number, a mechanism — is a fidelity break, not a humanizing win.
-- **Keep each term's scope.** Don't narrow or widen what a word covers to make it
-  sound friendlier: "saved items" isn't "saved posts," and 항목 isn't 글. If the
-  source is generic, stay generic; if you suspect the narrower word is what the
-  product means, flag it instead of swapping it.
-- **Keep the product's punctuation and quoting style.** Brackets and quote marks
-  around names and placeholders (`「${title}」`, `"…"`) are house style, not a
-  tell. Restyling them is an edit nobody asked for.
-- **Don't overcorrect.** Injecting slang, emoji, or exclamation points that
-  weren't warranted is a new AI tell, not a fix. When unsure, stay neutral.
-- **Keep the speech/formality level**, but don't police natural in-register
-  variation — that's what makes copy read human rather than uniform.
-- **Respect brand voice.** If earlier copy or a style guide establishes a voice,
-  match it rather than imposing a generic "natural" tone.
-- **Whole copy, not word-by-word.** Naturalness comes from rhythm across
-  sentences. Rewrite in passes over the full text, not term substitution.
+- **Preserve meaning and facts.** Don't drop information, claims, or required
+  wording for the sake of flow.
+- **Don't invent specifics.** Concreteness only helps when it's true. A scene,
+  number, or mechanism the source never stated is a fidelity break.
+- **Keep each term's scope.** "Saved items" isn't "saved posts," and 항목 isn't 글.
+  If you suspect the narrower word is what the product means, flag it.
+- **Keep the product's punctuation and quoting style** around names and
+  placeholders (`「${title}」`, `"…"`). It's house style, not a tell.
+- **Don't overcorrect.** Unwarranted slang, emoji, or exclamation points are a new
+  tell. When unsure, stay neutral.
+- **Respect brand voice.** Match an established voice or style guide rather than a
+  generic "natural" tone.
+- **Work on the whole copy.** Naturalness lives in rhythm across sentences, not in
+  term-by-term substitution.
 
 ## Delivering the result
 
-Default to returning just the rewritten copy — clean, ready to paste. When the
-user is clearly iterating or learning (they ask *why*, or want options), briefly
-name the main tells you fixed and offer a variant. Don't bury a good rewrite under
-commentary nobody asked for. For a codebase sweep, deliver a findings report
-(location, before, after, why) plus a short list of what you flagged but left
-alone — see `references/codebase-scan.md`.
-
-For the per-language catalogs (concrete tells and swaps in `<language>.md`,
-before/after pieces in `<language>-examples.md`), see `references/languages/`. To
-add support for a new language, follow `references/languages/_template.md`.
+Return just the rewritten copy, ready to paste. If the user is iterating or asks
+*why*, name the main tells you fixed and offer a variant; don't bury the rewrite
+in commentary. For a sweep, deliver a findings report (location, before, after,
+why) plus what you flagged but left alone, as `references/codebase-scan.md`
+describes.
