@@ -11,3 +11,7 @@ desktop.ini
 # Skill-creator eval artifacts (kept out of the published skill)
 *-workspace/
 evals/results/
+
+# Python
+__pycache__/
+*.pyc
