@@ -1,4 +1,4 @@
 ---
 type: regex
-pattern: '^(?=[\s\S]*ITCS 커넥트)(?=[\s\S]*Next\.js)(?=[\s\S]*Supabase)(?=[\s\S]*312)(?=[\s\S]*향후 계획)'
+pattern: '^(?=[\s\S]*스터디메이트)(?=[\s\S]*React Native)(?=[\s\S]*Firebase)(?=[\s\S]*540)(?=[\s\S]*4\.6)(?=[\s\S]*표본)(?=[\s\S]*다음 학기 계획)(?=[\s\S]*공부할 친구를 찾는 일은 생각보다 어렵습니다)'
 ---

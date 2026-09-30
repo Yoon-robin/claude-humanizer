@@ -32,18 +32,21 @@ stiff original.
 
 ## Step 0 — Load what the job needs
 
-- Detect the language of the copy (or the one you're asked to write in) and read
-  `references/languages/<language>.md`: its tells, swaps, and register notes.
-  Bundled: `korean.md`, `english.md`.
-- `<language>-examples.md` holds full before/after pieces. Read it for longer copy
-  or when you're unsure how far to go. Skip it for a short fix (a button, a toast)
-  and for sweeps.
+- Detect the language of the copy (or the one you're asked to write in).
+- **Short fix** (a button, a toast, a few lines): this file is enough. Open the
+  language file only if you hit a tell it doesn't cover. **Titles and headlines
+  are the exception:** also read the language file's titles section.
+- **Longer copy** (a paragraph or more): read `references/languages/<language>.md`
+  for its tells, swaps, and register notes (bundled: `korean.md`, `english.md`),
+  and `<language>-examples.md` for full before/after pieces when you're unsure how
+  far to go.
 - No file for the language? Apply the families below with native-level judgment
   and the same guardrails. If a language keeps coming up, write a file from
   `references/languages/_template.md`.
-- A **sweep over many strings** (locale files, JSX text, notification templates)?
-  Also read `references/codebase-scan.md`: inventory, group by surface, set each
-  surface's register, edit minimally, report.
+- **Sweep over many strings** (locale files, JSX text, notification templates):
+  read `references/codebase-scan.md` (inventory, group by surface, set each
+  surface's register, edit minimally, report). Skip the language files unless a
+  string needs them.
 
 ## Read it aloud
 
@@ -93,7 +96,9 @@ patterns.
 own: a contrast twist (`~지만`), a comma-split or left/right mirror, a metaphor.
 Structure and data slides take a label naming what the slide is (`사용 흐름`,
 `시스템 아키텍처`); keep a message title for a slide that lands one claim, and keep
-it plain. Match the form the rest of the deck uses, and keep numbers and names.
+it plain. Match the form the rest of the deck uses, and keep numbers, names, and
+the qualifiers that change how a number reads, such as a small sample or a period
+(`Next.js · Supabase 구성`, not `기술 스택`).
 
 ## Step 3 — Rewrite, then re-read
 

@@ -9,6 +9,9 @@
    that version, so an unbumped change never reaches them.
 4. CHANGELOG.md has an entry for the current version, so every release records
    what changed and how it was checked.
+5. Warns (without failing) when a sentence from an eval input also appears
+   verbatim in the skill's files. Overlap lets a model pass by recalling an
+   example instead of applying a rule, so keep eval inputs held out.
 
 Usage:
     python .github/scripts/check_plugin.py [--base <git ref>]
@@ -25,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PLUGIN_JSON = ".claude-plugin/plugin.json"
 MARKETPLACE_JSON = ".claude-plugin/marketplace.json"
 CHANGELOG = "CHANGELOG.md"
+MIN_OVERLAP = 12  # characters; shorter shared phrases are usually just the cliché being named
 DESCRIPTION_LIMIT = 1024
 # Changes under these paths reach people who install the plugin.
 SHIPPED_PREFIXES = ("skills/", PLUGIN_JSON)
@@ -116,6 +120,26 @@ def main() -> int:
         errors.append(f"{CHANGELOG} has no '## {version}' entry; record what changed and how it was checked")
     else:
         print(f"changelog: entry for {version} ok")
+
+    # 5. Eval inputs that overlap the skill's own text (warning only)
+    skill_text = "".join(p.read_text(encoding="utf-8") for p in (ROOT / "skills").rglob("*.md"))
+    overlaps = []
+    for case in sorted(p for p in (ROOT / "evals").glob("*") if p.is_dir() and p.name != "results"):
+        inputs = [p for p in [case / "prompt.md"] if p.exists()] + sorted(
+            p for p in (case / "resources").rglob("*") if p.is_file()
+        )
+        for path in inputs:
+            text = path.read_text(encoding="utf-8")
+            if path.name == "prompt.md":
+                text = text.split("---", 2)[-1]  # body only, not frontmatter
+            # sentences and quoted strings with Hangul, long enough to be distinctive
+            for piece in re.split(r'[\n"`<>]|(?<=[.?!])\s', text):
+                piece = piece.strip(" -•*:0123456789.[]")
+                if len(piece) >= MIN_OVERLAP and re.search("[가-힣]", piece) and piece in skill_text:
+                    overlaps.append(f"{path.relative_to(ROOT).as_posix()}: {piece}")
+    for item in sorted(set(overlaps)):
+        print(f"WARNING: eval input also appears in skill files — {item}")
+    print(f"eval overlap: {len(set(overlaps))} sentence(s)")
 
     for error in errors:
         print(f"ERROR: {error}", file=sys.stderr)

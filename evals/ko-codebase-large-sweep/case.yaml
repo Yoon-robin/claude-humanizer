@@ -1,0 +1,16 @@
+schema_version: "1.1"
+name: ko-codebase-large-sweep
+description: >-
+  Review-only sweep of a realistic Korean community app: about 130
+  user-facing strings across a locale file, components, a landing page,
+  server push code, an email template, and a test file. Fourteen issues are
+  seeded; everything else is clean or a trap (legal consent copy, an admin
+  audit-log surface that is consistently 합니다체, logs, comments, test strings,
+  and "{boardName}에", whose particle works after any noun). One seeded toast
+  is asserted verbatim in a test, so changing it breaks the test.
+expected_outcome: >-
+  Flags at least 11 of the 14 seeded issues with natural rewrites that keep
+  placeholders; leaves the traps alone; ideally notes that the PostComposer
+  test must change with the toast.
+context:
+  add_dirs: [resources]

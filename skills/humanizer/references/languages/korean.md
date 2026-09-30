@@ -214,6 +214,9 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
   already uses.
 - Shortening keeps numbers and names: `가입자는 312명까지 늘었습니다` → `가입자 312명`,
   not `가입 현황`.
+- It also keeps the qualifiers that change how a number reads: sample size, period,
+  `최대`, `약`. Move them into parentheses instead of dropping them:
+  `응답자는 적지만 추천 의향은 90%입니다` → `추천 의향 90% (응답자 적음)`, not `추천 의향 90%`.
 
 ---
 

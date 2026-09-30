@@ -26,7 +26,8 @@ sentence short.
 ## 1. Signature LLM vocabulary
 
 A cluster of words that show up far more in AI text than in human writing. One or
-two are fine; a pile of them is a giveaway. Replace with plain equivalents.
+two are fine; a pile of them is a giveaway. Replace with plain equivalents. A ✅ never adds a
+fact the ❌ didn't state; when the source has nothing concrete, cut instead.
 
 - **delve, embark, navigate (the complexities of), realm, landscape, tapestry,
   testament, beacon, symphony, journey** — reach for the plain word.
@@ -34,15 +35,16 @@ two are fine; a pile of them is a giveaway. Replace with plain equivalents.
   - ✅ Let's look at how to get more done.
 - **leverage, utilize, facilitate, foster, harness** → use, help, build.
   - ❌ Leverage our platform to facilitate seamless collaboration.
-  - ✅ Use our platform to work together without the friction.
+  - ✅ Use our platform to work together.
 - **robust, seamless, cutting-edge, world-class, best-in-class, state-of-the-art,
   next-level, game-changing** → say the specific thing instead.
-  - ❌ A robust, seamless, cutting-edge solution.
-  - ✅ It syncs in under a second and never drops a change.
+  - ❌ A robust, seamless, cutting-edge sync engine that updates every device in
+    under a second.
+  - ✅ Changes reach every device in under a second.
 - **underscore, showcase, highlight, unlock, elevate, empower, streamline** →
   show, prove, open up, lift, let.
   - ❌ Unlock your potential and elevate your workflow.
-  - ✅ Get more done with less clicking around.
+  - ✅ (cut it, and say what the product actually does)
 - **it's worth noting that, it's important to remember, that being said,
   furthermore, moreover, notably** → usually just delete and start the sentence.
 
@@ -53,9 +55,9 @@ perfectly balanced negation-then-elevation. One is a cliché; a pattern of them 
 a signature. Break the symmetry or make a plain claim.
 
 - ❌ It's not just a notebook. It's a system for thinking.
-- ✅ A notebook you'll actually keep using.
+- ✅ A notebook for organizing your thinking.
 - ❌ This isn't about working harder — it's about working smarter.
-- ✅ Do less busywork. Ship the thing.
+- ✅ (cut it, and say what the product actually does)
 - ❌ More than a product. A movement.
 - ✅ (delete — let the product speak)
 
@@ -66,11 +68,11 @@ specifically before delivering.
 **"Whether you're X or Y."** A balanced framing that pretends to include everyone
 while saying nothing. Name the real audience or cut it.
 - ❌ Whether you're a student or a CEO, Nova keeps you organized.
-- ✅ Students use it to keep coursework straight. Teams use it to ship. *(or cut)*
+- ✅ Nova keeps you organized.
 
 **"From X to Y" as a default opener/sweep.** The same fake-comprehensive seesaw.
 - ❌ From startups to enterprises, we've got you covered.
-- ✅ (delete — it says nothing) or name one concrete user.
+- ✅ (delete — it says nothing)
 
 **Mid-sentence antithesis around an em-dash / comma.** "…, not an afterthought,"
 "…, not X — Y." reads as manufactured contrast.
@@ -84,7 +86,7 @@ Vary the shape; don't let any line stay a tidy seesaw, even a reworded one.
 Phrases that fill space and signal "generic content" without saying anything.
 
 - ❌ In today's fast-paced world, staying productive is more important than ever.
-- ✅ (cut it — open on the actual point) Most to-do apps just make longer lists.
+- ✅ (cut it, and open on the actual point)
 - ❌ In the ever-evolving landscape of digital marketing…
 - ✅ Marketing changes fast, so…
 - ❌ Are you tired of X? Look no further!
@@ -98,8 +100,7 @@ Phrases that fill space and signal "generic content" without saying anything.
   fragments. Fix by cutting one sentence in half and letting a line land short.
   - ❌ Our app helps you plan your day. It sends you reminders. It tracks your
     progress over time.
-  - ✅ Plan your day, get a nudge when it matters, and see how far you've come. All
-    in one place.
+  - ✅ Plan your day, get reminders, and track your progress. All in one app.
 - **Tricolon on every line.** AI loves lists of exactly three — "fast, simple, and
   reliable." One is punchy; three per paragraph is a tell.
   - ❌ Powerful, intuitive, and beautifully designed.
@@ -131,8 +132,8 @@ Phrases that fill space and signal "generic content" without saying anything.
   match a conversational register. (Not in formal/legal copy — match the level.)
 - **Hedging** — "can help you," "may," "might," "arguably," "some would say,"
   "in many cases." Where the claim is true, state it.
-  - ❌ Our tool can help you potentially save time.
-  - ✅ Our tool saves you about an hour a day.
+  - ❌ Our tool can potentially help you save up to an hour a day.
+  - ✅ Our tool saves you up to an hour a day.
 - **Manufactured enthusiasm** — exclamation points, "Exciting news!", "We're
   thrilled to…". Warmth is fine; inflation reads corporate. Say the thing plainly.
 - **House-tone drift across a surface.** Beyond any single tell, English product
@@ -152,7 +153,7 @@ Phrases that fill space and signal "generic content" without saying anything.
 | delve into | look at / dig into | signature LLM verb |
 | leverage / utilize | use | plain verb |
 | facilitate | help / make easier | plain verb |
-| seamless / robust / cutting-edge | the specific fact | show, don't label |
+| seamless / robust / cutting-edge | the source's specific fact, or cut | show, don't label |
 | unlock / elevate / empower | open up / lift / let | hype verbs |
 | It's not just X, it's Y | a plain claim | break the antithesis |
 | In today's fast-paced world | (delete) | filler opener |

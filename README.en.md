@@ -101,9 +101,12 @@ native-level judgment.
 Korean is the current focus. English is maintained as is, and other languages run
 on the universal principles.
 
-A short fix reads only the tells file; the before/after pieces in
-`<language>-examples.md` load for longer copy, so fixing one button doesn't pay
-for every example.
+What gets loaded depends on the job. A short fix like a button or a toast reads
+only `SKILL.md`; titles, headlines, and longer copy also read the language file;
+the before/after pieces in `<language>-examples.md` load only when a longer rewrite
+needs calibrating; sweeps read `codebase-scan.md`. In measurements, short fixes
+were just as good with `SKILL.md` alone, and titles were more reliable with the
+language file.
 
 ## Design principles
 
@@ -136,15 +139,23 @@ checks that it stays out.
 | `ko-landing-copy` | Fresh copy: named features kept, no superlatives or slick 대구 |
 | `ko-codebase-drift-review` | Sweep of a small app fixture: obvious drift, subtle drift (particle after a placeholder, mixed button labels, a push message in another file), and restraint |
 | `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
-| `ko-slide-titles` | Slide titles: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
+| `ko-slide-titles` | Slide titles in a deck the skill has never seen: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
+| `ko-codebase-large-sweep` | An app-sized sweep (about 130 strings across 8 files): finds 14 seeded issues, leaves traps alone (legal copy, an audit log, logs, tests), and flags the test that asserts on a changed string |
 | `neg-*` | Requests the skill must **not** take: spelling-only fixes, comprehension-only translation, AI-detector evasion |
 
-Current models handle a single piece of copy, such as a formal notice or a 반말
-caption, well even without the skill, so those cases show a small gap against the
-baseline. They guard against the skill making things worse. The skill made a clear
-difference in two places: leaving clean strings alone and keeping meaning in
-codebase sweeps, and keeping proper nouns and numbers when shortening slide
-titles. Per-version measurements are in [CHANGELOG.md](CHANGELOG.md) (Korean).
+Against runs without the skill, the picture is clear:
+
+- **Large difference: slide titles.** On a deck it had never seen, the skill kept
+  proper nouns and numbers when shortening titles; runs without it dropped them
+  every time.
+- **Small difference: single pieces of copy and codebase sweeps.** Current models
+  polish a formal notice or a 반말 caption well without the skill. In an app-sized
+  sweep, the base model also found every seeded issue and avoided the traps. The
+  skill's edge there was making smaller edits to marketing headlines instead of
+  rewriting them, at the cost of more tokens and time.
+
+The small-difference cases guard against the skill making things worse.
+Per-version measurements and method are in [CHANGELOG.md](CHANGELOG.md) (Korean).
 
 ```bash
 claude plugin eval .                            # full suite, with a no-plugin baseline

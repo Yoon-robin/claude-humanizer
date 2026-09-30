@@ -1,7 +1,7 @@
 {
   "name": "humanizer",
   "displayName": "Humanizer",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Makes AI-written copy read like a native human wrote it, in any language. Deep catalogs for Korean and English, plus a sweep workflow for a product's UI strings.",
   "author": {
     "name": "Yoon-robin",

@@ -2,7 +2,7 @@
 
 Companion to `korean.md` for the `humanizer` skill: full before/after pieces by
 copy type. Read it for longer copy or when you're unsure how far a rewrite
-should go. For a short fix or a codebase sweep, `korean.md` is enough.
+should go. A short fix or a codebase sweep doesn't need it.
 
 Realistic AI-drafted pieces, their humanized rewrites, and the specific tells
 fixed. Use these to calibrate what "done" looks like per format — the target
@@ -18,13 +18,12 @@ Register: usually 명사형 종결 or 해요체. Punchy, rhythmic, benefit-first
 > 다양한 기능들을 통해 당신의 일상을 더욱 특별하게 만들어 드립니다. 지금 바로 구매하세요!
 
 **After (human):**
-> 매일 쓰는 물건일수록, 잘 만든 게 티가 나요.
-> 가볍고, 배터리는 오래가요.
+> 가벼워요. 배터리도 오래가고요.
 
 Fixed: `최고의/완벽한/특별한` empty superlatives, `~을 제공하는`, `다양한 기능들`, `~을 통해`,
-`당신의`, `지금 바로 ~하세요!` cliché, and flat rhythm → varied lines. Every concrete
-detail in the rewrite (가벼운 무게, 오래가는 배터리) comes from the source; nothing is
-invented to sound vivid.
+`당신의`, `지금 바로 ~하세요!` cliché, and flat rhythm → a short line and a trailing
+`~고요`. The rewrite keeps only the source's two facts (가벼운 무게, 오래가는 배터리);
+`최고의 품질` is cut rather than turned into a new claim.
 
 ---
 
@@ -83,7 +82,7 @@ Register: 해요체 or 습니다체 depending on formality. Warmer than a notice
 structured than SNS. The trap here is the mechanical greeting-body-closing arc.
 
 **Before (AI):**
-> 안녕하세요, 고객님. 저희 서비스를 이용해 주셔서 진심으로 감사드립니다. 이번에 저희는
+> 안녕하세요, 고객님. 항상 저희 서비스를 아껴 주셔서 진심으로 감사의 말씀을 드립니다. 이번에 저희는
 > 앱에서 바로 예약할 수 있는 새로운 기능을 출시하게 되었음을 알려 드리고자 합니다.
 > 이번 주부터 해당 기능을 통해 전화나 대기 없이 더욱 편리하게 서비스를 이용하실 수
 > 있습니다. 앞으로도 많은 관심 부탁드립니다.
