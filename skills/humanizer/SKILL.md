@@ -2,11 +2,12 @@
 name: humanizer
 description: >-
   Makes AI-written copy read like a native human wrote it, in any language
-  (English, Korean, Japanese, Spanish, …). Use whenever you write or edit copy
-  people will read: marketing and ad copy, landing pages, UI microcopy (buttons,
-  toasts, empty states, errors), push notifications, social posts, emails,
-  newsletters — and when sweeping a codebase's UI strings (locale/i18n files, JSX
-  text, notification templates) for stiff or inconsistent copy. Trigger on
+  (detailed catalogs for Korean and English; others use the universal rules).
+  Use whenever you write or edit copy people will read: marketing and ad copy,
+  landing pages, UI microcopy (buttons, toasts, empty states, errors), push
+  notifications, social posts, emails, newsletters, presentation slide titles,
+  report headings — and when sweeping a codebase's UI strings (locale/i18n
+  files, JSX text, notification templates) for stiff or inconsistent copy. Trigger on
   requests to write, translate, polish, or naturalize text, and whenever output
   sounds stiff, translated, over-formal, or AI-ish (English "delve," "it's not
   just X, it's Y," em-dash overuse; Korean 번역투·직역체·상투어), or the user says it
@@ -77,9 +78,9 @@ patterns.
 
 1. **Translation-ese / calques** — structures imported from another language.
    (EN "in order to," noun pile-ups; KO `~에 대해`, `~을 통해`, `~을 제공합니다`)
-2. **Over-formality & cliché padding** — hype and empty phrases that add register,
-   not meaning. (EN "seamless," "unlock," "in today's fast-paced world"; KO
-   `완벽한`, `최고의`, `많은 관심 부탁드립니다`)
+2. **Over-formality, cliché & decoration** — hype, empty phrases, and metaphors or
+   poetic verbs where a plain word works. (EN "seamless," "unlock," "in today's
+   fast-paced world"; KO `완벽한`, `많은 관심 부탁드립니다`, `입구가 모입니다`, `머무는 곳`)
 3. **Flat rhythm** — the most universal tell: uniform length and endings, no
    fragments or questions. Cut, split, let a line land short.
 4. **Structural excess** — essay scaffolding on copy: needless bullets, "Firstly /
@@ -87,6 +88,12 @@ patterns.
 5. **Slick parallelism / antithesis** — the too-perfect balanced line: EN "It's
    not just X, it's Y"; KO 대구 like `소리는 지우고, 하루는 채우고`. Break the symmetry
    or let one side go plain.
+
+**Titles and headlines** (slides, report sections, diagrams) have tells of their
+own: a contrast twist (`~지만`), a comma-split or left/right mirror, a metaphor.
+Structure and data slides take a label naming what the slide is (`사용 흐름`,
+`시스템 아키텍처`); keep a message title for a slide that lands one claim, and keep
+it plain. Match the form the rest of the deck uses, and keep numbers and names.
 
 ## Step 3 — Rewrite, then re-read
 

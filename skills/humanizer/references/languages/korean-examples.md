@@ -100,6 +100,28 @@ in a name variable would change the template, not the tone.
 
 ---
 
+## Presentation slide titles (발표 슬라이드 제목)
+
+Register: labels (명사형·개조식) for structural and data slides; a plain message
+title only where a slide lands one claim.
+
+Context: a 21-slide deck presenting a student community site. The AI draft gave
+every slide a full-sentence title with a hook. The author kept the labels below.
+
+| Slide | ❌ AI draft | ✅ Kept | Tell fixed |
+|---|---|---|---|
+| Usage data | 숫자는 작지만 전부 실제 기록입니다 | 실제 사용 기록 | `~지만` contrast |
+| User flow | 한 번 가입하면, 매일 홈에서 시작합니다 | 사용 흐름 | comma-split title |
+| Tech stack | 왼쪽은 프런트엔드, 오른쪽은 백엔드입니다 | 프런트엔드 · 백엔드 구성 | left/right mirror |
+| Architecture | 서버 한 대에 네 가지 입구가 모입니다 | 시스템 아키텍처 | metaphor |
+| Why we built it | 우리 학교 사람들이 머무는 곳 하나를 만들기로 했습니다 | 우리 학교 사람들이 모이는 곳을 만들기로 했습니다 | poetic verb (머무는) |
+
+The last row stays a sentence because that slide's job is to state the reason for
+the project; only the poetic verb goes. The labels don't invent anything: each
+names what the slide already shows.
+
+---
+
 ## Register drift (product & codebase copy)
 
 Register: whatever the *surrounding* copy already uses. This is the tell that only

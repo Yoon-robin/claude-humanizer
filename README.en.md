@@ -46,11 +46,12 @@ folder), copy or upload `skills/humanizer` as a skill.
 ## What it does
 
 **Copy, one piece at a time.** Marketing and ad copy, landing pages, UI microcopy,
-push notifications, social posts, emails, newsletters. It hunts five tell families
-that recur in every language:
+push notifications, social posts, emails, newsletters, presentation slide titles,
+and report headings. It hunts five tell families that recur in every language:
 
 1. **Translation-ese / calques** — structures imported from another language
-2. **Over-formality, deference & cliché padding** — hype and empty phrases
+2. **Over-formality, cliché & decoration** — hype, empty phrases, and metaphors
+   where a plain word works
 3. **Flat rhythm** — uniform length and cadence (the most universal tell)
 4. **Structural excess** — bullets, signposting, and scaffolding forced onto copy
 5. **Slick symmetrical parallelism** — the too-perfect balanced line
@@ -84,6 +85,7 @@ skills/humanizer/
         └── _template.md           ← how to add a new language
 evals/                             ← test suite for `claude plugin eval`
 .github/                           ← checks that run on every push and PR
+CHANGELOG.md                       ← per-version changes and measurements
 ```
 
 The skill detects the target language and loads its catalog. Languages without a
@@ -134,12 +136,15 @@ checks that it stays out.
 | `ko-landing-copy` | Fresh copy: named features kept, no superlatives or slick 대구 |
 | `ko-codebase-drift-review` | Sweep of a small app fixture: obvious drift, subtle drift (particle after a placeholder, mixed button labels, a push message in another file), and restraint |
 | `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
+| `ko-slide-titles` | Slide titles: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
 | `neg-*` | Requests the skill must **not** take: spelling-only fixes, comprehension-only translation, AI-detector evasion |
 
-Current models handle a single piece of copy well even without the skill, so the
-single-piece cases may show a small gap against the baseline. They guard against
-the skill making things worse. The skill's clearest effect shows up in codebase
-sweeps: leaving clean strings alone and keeping the original meaning.
+Current models handle a single piece of copy, such as a formal notice or a 반말
+caption, well even without the skill, so those cases show a small gap against the
+baseline. They guard against the skill making things worse. The skill made a clear
+difference in two places: leaving clean strings alone and keeping meaning in
+codebase sweeps, and keeping proper nouns and numbers when shortening slide
+titles. Per-version measurements are in [CHANGELOG.md](CHANGELOG.md) (Korean).
 
 ```bash
 claude plugin eval .                            # full suite, with a no-plugin baseline
@@ -163,8 +168,9 @@ start with the smoke run. Results land in `evals/results/`, which is git-ignored
   enforce the Agent Skills limit. Put "how" in the body and keep "when" in the
   description.
 - **Releasing:** installs are pinned to the `version` in
-  `.claude-plugin/plugin.json`, so bump it for every change users should receive.
-  CI fails if shipped files change without a bump.
+  `.claude-plugin/plugin.json`, so bump it for every change users should receive,
+  and add an entry to [CHANGELOG.md](CHANGELOG.md) saying what changed and how it
+  was checked. CI fails if either is missing.
 
 ## License
 

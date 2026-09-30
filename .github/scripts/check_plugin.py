@@ -7,6 +7,8 @@
 3. With --base <ref>: if anything users receive changed since <ref>, the version
    in .claude-plugin/plugin.json must differ from <ref>'s. Installs are pinned to
    that version, so an unbumped change never reaches them.
+4. CHANGELOG.md has an entry for the current version, so every release records
+   what changed and how it was checked.
 
 Usage:
     python .github/scripts/check_plugin.py [--base <git ref>]
@@ -22,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 PLUGIN_JSON = ".claude-plugin/plugin.json"
 MARKETPLACE_JSON = ".claude-plugin/marketplace.json"
+CHANGELOG = "CHANGELOG.md"
 DESCRIPTION_LIMIT = 1024
 # Changes under these paths reach people who install the plugin.
 SHIPPED_PREFIXES = ("skills/", PLUGIN_JSON)
@@ -103,6 +106,16 @@ def main() -> int:
                 print(f"version: {base_version} -> {plugin.get('version')} ok")
         else:
             print(f"version: no shipped files changed since {args.base}")
+
+    # 4. Changelog entry for the current version
+    version = plugin.get("version")
+    changelog = ROOT / CHANGELOG
+    if not changelog.exists():
+        errors.append(f"{CHANGELOG} is missing")
+    elif not re.search(rf"^## \[?{re.escape(str(version))}\]?(\s|$)", changelog.read_text(encoding="utf-8"), re.M):
+        errors.append(f"{CHANGELOG} has no '## {version}' entry; record what changed and how it was checked")
+    else:
+        print(f"changelog: entry for {version} ok")
 
     for error in errors:
         print(f"ERROR: {error}", file=sys.stderr)
