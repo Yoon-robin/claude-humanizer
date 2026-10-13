@@ -78,7 +78,7 @@ skills/humanizer/
 └── references/
     ├── codebase-scan.md           ← sweeping a product's UI strings
     └── languages/
-        ├── korean.md              ← Korean tells and swaps (read for longer copy and titles)
+        ├── korean.md              ← Korean tells and swaps (read for longer copy)
         ├── korean-examples.md     ← Korean before/after pieces (longer copy only)
         ├── english.md             ← English tells (delve, em-dash, antithesis…)
         ├── english-examples.md    ← English before/after piece
@@ -101,12 +101,11 @@ native-level judgment.
 Korean is the current focus. English is maintained as is, and other languages run
 on the universal principles.
 
-What gets loaded depends on the job. A short fix like a button or a toast reads
-only `SKILL.md`; titles, headlines, and longer copy also read the language file;
+What gets loaded depends on the job. A short fix like a button, a toast, or a
+deck's titles reads only `SKILL.md`; longer copy also reads the language file;
 the before/after pieces in `<language>-examples.md` load only when a longer rewrite
 needs calibrating; sweeps read `codebase-scan.md`. In measurements, short fixes
-were just as good with `SKILL.md` alone, and titles were more reliable with the
-language file.
+and titles were just as good with `SKILL.md` alone.
 
 ## Design principles
 
@@ -119,8 +118,10 @@ language file.
 - **Register is held, not lowered.** Formality, speech level, and honorifics stay
   where they were. Fixing drift means returning a string to the voice its surface
   already chose. That's consistency, not casualizing.
-- **Content is protected.** Names, numbers, prices, quotes, legal wording,
-  placeholders, and the feature names a brief calls out are never rewritten.
+- **Content is protected.** Names, numbers and their qualifiers (period, range,
+  condition), prices, quotes, legal wording, placeholders, and the feature names a
+  brief calls out are never rewritten. `SKILL.md` opens with this rule, and in
+  measurements most of the skill's effect came from it.
 
 **Not a goal: evading AI detectors.** This is a writing-quality tool for copy you
 or your team are responsible for. It isn't built to disguise AI-generated
@@ -141,17 +142,17 @@ checks that it stays out.
 | `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
 | `ko-slide-titles` | Slide titles in a deck the skill has never seen: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
 | `ko-report-titles` | A quarterly report deck: only the metaphor titles change; fine titles, a hedged risk ("최대 12% 오를 수 있습니다"), and both facts in a contrast title stay |
+| `ko-proposal-titles` | A proposal deck the skill has never seen: contrast, metaphor, left/right mirror, and question titles get fixed while numbers, periods, and qualifiers like 약 and 최대 stay. Runs without the skill dropped the numbers here |
 | `ko-codebase-large-sweep` | An app-sized sweep (about 130 strings across 8 files): finds 14 seeded issues, leaves traps alone (legal copy, an audit log, logs, tests), and flags the test that asserts on a changed string |
 | `neg-*` | Requests the skill must **not** take: spelling-only fixes, comprehension-only translation, AI-detector evasion |
 
 Against runs without the skill, the picture is clear:
 
-- **Large difference: slide titles.** Where a title is easy to shorten into a
-  label like "Tech stack," runs without the skill dropped proper nouns and numbers
-  every time; the skill kept them. But a one-sentence instruction (keep names,
-  numbers and their qualifiers, and the original register; change only what's
-  needed) got the same result. On a number-heavy report deck, runs without the
-  skill kept the facts too.
+- **Large difference: slide titles.** When shortening titles into labels, runs
+  without the skill dropped numbers and proper nouns on two of three decks; the
+  skill kept them every time. But a one-sentence instruction (keep names, numbers
+  and their qualifiers, and the original register; change only what's needed) got
+  the same result.
 - **Small difference: single pieces of copy and codebase sweeps.** Current models
   polish a formal notice or a 반말 caption well without the skill. In an app-sized
   sweep, the base model also found every seeded issue and avoided the traps. The

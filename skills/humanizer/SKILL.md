@@ -30,12 +30,19 @@ prove the text is human. Remove the tells that mark it as machine-made, and keep
 the meaning, register, and voice exactly. Forced casualness is as wrong as the
 stiff original.
 
+## The core rule
+
+**Keep what the source says, and change only what needs changing.** Names,
+numbers and the qualifiers that change how they read (a period, a range, a
+condition, a sample size, "about," "up to," "more than"), the meaning, and the
+register stay as they are. Everything below serves this rule; when a fix would
+break it, keep the original wording.
+
 ## Step 0 — Load what the job needs
 
 - Detect the language of the copy (or the one you're asked to write in).
-- **Short fix** (a button, a toast, a few lines): this file is enough. Open the
-  language file only if you hit a tell it doesn't cover. **Titles and headlines
-  are the exception:** also read the language file's titles section.
+- **Short fix** (a button, a toast, a few lines, a deck's titles): this file is
+  enough. Open the language file only if you hit a tell it doesn't cover.
 - **Longer copy** (a paragraph or more): read `references/languages/<language>.md`
   for its tells, swaps, and register notes (bundled: `korean.md`, `english.md`),
   and `<language>-examples.md` for full before/after pieces when you're unsure how
@@ -98,10 +105,11 @@ the pattern hurts it in context. A deliberate slogan, an ordered how-to, or a
 own: a contrast twist (`~지만`), a comma-split or left/right mirror, a metaphor.
 Structure and data slides take a label naming what the slide is (`사용 흐름`,
 `시스템 아키텍처`); keep a message title for a slide that lands one claim, and keep
-it plain. Match the form the rest of the deck uses, and keep numbers, names, and
-the qualifiers that change how a number reads, such as a small sample or a period
-(`Next.js · Supabase 구성`, not `기술 스택`). A label may drop a fact only when the
-slide itself shows it; if you can't see the slide, keep it.
+it plain. Match the form the rest of the deck uses. Shortening keeps names,
+numbers, and their qualifiers (`Next.js · Supabase 구성`, not `기술 스택`;
+`추천 의향 90% (응답자 적음)`, not `추천 의향 90%`; `1,200명 이상`, not `1,200명`). A
+label may drop a fact only when the slide itself shows it; if you can't see the
+slide, keep it.
 
 ## Step 3 — Rewrite, then re-read
 
@@ -145,8 +153,6 @@ an awkward sentence, and rewrite around them:
 
 ## Guardrails
 
-- **Preserve meaning and facts.** Don't drop information, claims, or required
-  wording for the sake of flow.
 - **Don't invent or shift meaning.** Keep who, what, conditions, timing, scope,
   and certainty: "nothing to show" isn't "nothing exists," "may" isn't "will,"
   "cozy" isn't "quiet." Don't add a scene, number, deadline, or mechanism, and
