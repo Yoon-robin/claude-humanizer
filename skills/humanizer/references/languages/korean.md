@@ -41,11 +41,11 @@ Correct Korean built on English grammar. A native writer wouldn't reach for it.
 
 **Overused `~들`** — Korean marks plurals by context.
 - ❌ 사용자들은 다양한 혜택들을 받을 수 있습니다.
-- ✅ 사용자는 다양한 혜택을 받을 수 있어요.
+- ✅ 사용자는 다양한 혜택을 받을 수 있습니다.
 
 **`당신`** — sounds dubbed. Drop it or address by role.
 - ❌ 당신의 하루를 더 특별하게 만들어 드립니다.
-- ✅ 하루를 더 특별하게 만들어 드려요.
+- ✅ 하루를 더 특별하게 만들어 드립니다.
 
 **`~할 수 있습니다` on every line** — state it, or use an imperative.
 - ❌ 저장할 수 있습니다. 공유할 수 있습니다. 편집할 수 있습니다.
@@ -57,15 +57,17 @@ Correct Korean built on English grammar. A native writer wouldn't reach for it.
 
 **`그것은 / 이것은 ~입니다` openers** — English dummy subjects.
 - ❌ 그것은 우리가 가장 자신 있는 기능입니다.
-- ✅ 저희가 가장 자신 있는 기능이에요.
+- ✅ 저희가 가장 자신 있는 기능입니다.
 
 **`다양한` as a default modifier** — cut it, or name the things.
 - ❌ 다양한 기능과 다양한 혜택을 다양한 방식으로 제공합니다.
-- ✅ 기능도 혜택도 여러 가지예요.
+- ✅ 기능도 혜택도 여러 가지입니다.
 
-**`및` / `등`** — stiff 문어체 and a report reflex. Use `~와/과`, `-고`, or a comma.
+**`및` / `등`** — stiff 문어체 and a report reflex. Use `~와/과`, `-고`, or a comma. If
+the list is partial, keep that meaning (`같은`, or keep `등`); dropping it makes the
+list read complete.
 - ❌ 예약 및 결제, 알림 등의 기능을 지원합니다.
-- ✅ 예약하고 결제하고, 알림까지 챙겨 줘요.
+- ✅ 예약, 결제, 알림 같은 기능을 지원합니다.
 
 **`보다` as "more"** — use `더`.
 - ❌ 보다 나은 경험을 제공하기 위해.
@@ -73,7 +75,7 @@ Correct Korean built on English grammar. A native writer wouldn't reach for it.
 
 **Boast verbs `~을 자랑합니다` / `~을 선사합니다`**
 - ❌ 압도적인 성능을 자랑합니다.
-- ✅ 성능이 좋아요.
+- ✅ 성능이 좋습니다.
 
 ---
 
@@ -94,12 +96,13 @@ Deference or hype that carries no information. Cut it; what's left is stronger.
 **Empty superlatives `완벽한 / 특별한 / 최고의 / 혁신적인`** — lead with a benefit the
 source states, or cut.
 - ❌ 가볍고 배터리가 오래가는, 완벽한 경험을 선사하는 특별한 제품입니다.
-- ✅ 가볍고, 배터리가 오래가요.
+- ✅ 가볍고 배터리가 오래갑니다.
 
 **Ad-cliché imperatives `지금 바로 ~하세요!` / `놓치지 마세요!`** — keep at most one,
-and only if it earns its place.
+and only if it earns its place. Don't swap the cliché for a deadline or a claim
+the source never made.
 - ❌ 지금 바로 신청하세요! 이 기회를 놓치지 마세요!
-- ✅ 신청은 오늘까지예요.
+- ✅ 지금 신청하세요.
 
 **Forced friendliness `함께 ~해요`, `다 같이`, `~하는 건 어떨까요?`** — often rides on a
 rule-of-three.
@@ -114,7 +117,7 @@ thing, the figure is decoration, and native readers find it cringe. Keep a figur
 only when the brand voice is deliberately figurative and the figure carries
 information.
 - ❌ 서버 한 대에 네 가지 입구가 모입니다. (다이어그램 제목)
-- ✅ 시스템 아키텍처
+- ✅ 시스템 아키텍처 (the diagram shows the one server and four entry points)
 - ❌ 우리 학교 사람들이 머무는 곳 하나를 만들기로 했습니다.
 - ✅ 우리 학교 사람들이 모이는 곳을 만들기로 했습니다.
 
@@ -133,16 +136,16 @@ hold the politeness level and vary the endings.
 
 **Uniform length** — break three medium sentences with a short one or a fragment.
 - ❌ 이 앱은 일정을 관리해 줍니다. 알림도 보내 줍니다. 통계도 제공합니다.
-- ✅ 일정을 관리하고, 알림을 보내요. 통계는 덤.
+- ✅ 일정을 관리하고 알림도 보내 줍니다. 통계도 볼 수 있고요.
 
-**No fragments or questions**
-- ❌ 당신의 취향에 맞는 음악을 추천해 드립니다.
-- ✅ 취향에 맞는 음악을 골라 드려요. 오늘은 뭐 들을래요?
+**Fragments and questions are allowed, not required.** Use one where it fits the
+voice; don't add a question or a fragment the source has no reason for.
 
 **A wider ending palette** — one or two per piece, matched to the brand voice:
 - **명사형 종결** — 충전 걱정 없는 30시간.
 - **`~거든요`** (a warm reason) — 저희가 좀 까다롭거든요.
-- **`~더라고요`** (shared discovery) — 써 보니 확실히 다르더라고요.
+- **`~더라고요`** (shared discovery) — 써 보니 확실히 다르더라고요. Only when the source
+  reports that experience; otherwise it reads as a fake testimonial.
 - **`~잖아요`** (assumed agreement) — 매일 쓰는 거잖아요.
 - **`~죠`** (soft assertion) — 이 정도면 충분하죠.
 - **`~고요`** (warm trailing) — 알림도 새로 들어왔고요.
@@ -161,15 +164,15 @@ Essay scaffolding on copy that should just flow.
   - 튼튼합니다
   - 저렴합니다
   ```
-- ✅ 가볍고 튼튼한데, 가격까지 착해요.
+- ✅ 가볍고 튼튼하고, 가격도 저렴합니다.
 
 **Ordinal signposting `첫째, 둘째, 셋째` / `먼저 ~ 다음으로 ~ 마지막으로`**
 - ❌ 첫째, 사용이 간편합니다. 둘째, 디자인이 예쁩니다. 셋째, 가격이 좋습니다.
-- ✅ 쓰기 쉽고, 예쁘고, 가격도 좋아요.
+- ✅ 사용이 간편하고 디자인이 예쁘고, 가격도 좋습니다.
 
 **Rigid `~뿐만 아니라 ~도`** — fine once.
 - ❌ 성능이 좋을 뿐만 아니라 디자인도 좋습니다.
-- ✅ 성능도 디자인도 잡았어요.
+- ✅ 성능도 디자인도 좋습니다.
 
 **Slick 대구** — a flawlessly balanced line reads as manufactured. The fix must not
 be another tidy 대구.
@@ -180,7 +183,7 @@ be another tidy 대구.
 
 **A tidy intro-body-conclusion arc on a two-line message**
 - ❌ 안녕하세요. 오늘은 새로운 소식을 전해 드리려 합니다. 바로 신제품 출시 소식입니다.
-- ✅ 새 제품이 나왔어요.
+- ✅ 신제품이 나왔습니다.
 
 ---
 
@@ -191,7 +194,7 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 
 **Contrast titles `~지만`, `~가 아니라`**
 - ❌ 숫자는 작지만 전부 실제 기록입니다
-- ✅ 실제 사용 기록
+- ✅ 실제 사용 기록 (the slide shows the small numbers themselves)
 
 **Comma-split titles** — a 대구 in miniature.
 - ❌ 한 번 가입하면, 매일 홈에서 시작합니다
@@ -203,7 +206,7 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 
 **Metaphor titles** (see §2)
 - ❌ 서버 한 대에 네 가지 입구가 모입니다
-- ✅ 시스템 아키텍처
+- ✅ 시스템 아키텍처 (the diagram shows the server and entry points)
 
 **Choosing the form**
 - Structure, diagram, table, contents, and data slides take a **label**
@@ -217,6 +220,9 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 - It also keeps the qualifiers that change how a number reads: sample size, period,
   `최대`, `약`. Move them into parentheses instead of dropping them:
   `응답자는 적지만 추천 의향은 90%입니다` → `추천 의향 90% (응답자 적음)`, not `추천 의향 90%`.
+- A label may drop a fact (a count, a period, a caveat) only when the slide itself
+  shows it in a diagram, chart, or table. If you can't see the slide, keep the fact
+  in the title. Keep the relation too: `1,200명을 넘었습니다` is `1,200명 이상`, not `1,200명`.
 
 ---
 
@@ -226,7 +232,7 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 |---|---|---|
 | ~에 대해 생각하다 | ~을 생각하다 | calque |
 | ~을 통해 | ~(으)로 | simple means |
-| ~을 제공합니다 / 가지고 있습니다 | ~이 있어요 / 평범한 동사 | calque |
+| ~을 제공합니다 / 가지고 있습니다 | ~이 있습니다 / 평범한 동사 (말투는 그대로) | calque |
 | 사용자들, 혜택들 | 사용자, 혜택 | redundant ~들 |
 | 당신 | (생략) | readers aren't 당신 |
 | ~되어집니다 | ~됩니다 | double passive |
@@ -236,7 +242,7 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 | 첫째, 둘째, 셋째 | 자연스러운 나열 | signposting |
 | ~뿐만 아니라 ~도 | ~도 ~도 | rigid parallel |
 | 다양한 (반복) | (삭제) / 실제 대상 | filler |
-| 및 / ~ 등 | ~와/과, -고, 쉼표 | 문어체 |
+| 및 / ~ 등 | ~와/과, -고, 쉼표 (일부만 든 목록이면 `같은`) | 문어체 |
 | 보다 나은 | 더 나은 | calque |
 | 자랑합니다 / 선사합니다 | 평범한 서술 | boast verb |
 | 입구가 모입니다, 머무는 곳 | 구성, 모이는 곳 | decorative metaphor |
@@ -247,7 +253,8 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
 ## 7. Calibration notes
 
 - **Formal stays formal.** Humanizing a 습니다체 piece removes calques and padding;
-  it doesn't lower the register.
+  it doesn't lower the register. The ✅ lines above keep the ❌ line's register; a
+  fix for one tell shouldn't quietly change the ending too.
 - **Specifics come from the source.** Lead with a fact the source states instead
   of the superlative. If there are none, cut the hype and stay plain; never
   invent a detail.

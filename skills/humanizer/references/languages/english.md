@@ -20,6 +20,7 @@ sentence short.
 5. [Punctuation & structural tells](#5-punctuation--structural-tells)
 6. [Over-formality & hedging](#6-over-formality--hedging)
 7. [Quick swap table](#7-quick-swap-table)
+8. [Titles & headlines](#8-titles--headlines)
 
 ---
 
@@ -130,10 +131,11 @@ Phrases that fill space and signal "generic content" without saying anything.
 - **Missing contractions** where a human would contract. AI often writes "you
   will," "do not," "it is" in casual contexts. Use "you'll," "don't," "it's" to
   match a conversational register. (Not in formal/legal copy — match the level.)
-- **Hedging** — "can help you," "may," "might," "arguably," "some would say,"
-  "in many cases." Where the claim is true, state it.
+- **Stacked hedging** — "can potentially help," "may possibly," "arguably," "some
+  would say." Collapse the stack to one hedge. Drop the hedge only when the source
+  states the claim as fact; "may" never becomes "will."
   - ❌ Our tool can potentially help you save up to an hour a day.
-  - ✅ Our tool saves you up to an hour a day.
+  - ✅ Our tool may save you up to an hour a day.
 - **Manufactured enthusiasm** — exclamation points, "Exciting news!", "We're
   thrilled to…". Warmth is fine; inflation reads corporate. Say the thing plainly.
 - **House-tone drift across a surface.** Beyond any single tell, English product
@@ -161,4 +163,22 @@ Phrases that fill space and signal "generic content" without saying anything.
 | — used 4+ times | periods / commas | em-dash overuse |
 | Firstly / In conclusion | (delete) | signposting |
 | you will / do not (casual) | you'll / don't | add contractions |
-| can help you potentially | states the benefit | drop the hedge |
+| can potentially help you | may help you | one hedge, not three |
+
+---
+
+## 8. Titles & headlines
+
+Slide titles, report headings, landing-page section headers.
+
+- Tells: a hook with a twist ("Small numbers, real impact"), a colon subtitle on
+  every title ("Architecture: Where It All Comes Together"), a rhetorical question,
+  Title Case Everywhere.
+- Structure, diagram, table, and data slides take a label naming what the slide is
+  ("System architecture", "Weekly active users"). Keep a plain message title for a
+  slide whose job is one claim.
+- Shortening keeps names, numbers, and the qualifiers that change how a number reads
+  ("up to," "about," the period, a small sample): "Downloads passed 12,000 in one week"
+  becomes "12,000+ downloads in the first week," not "Downloads."
+- A label may drop a fact only when the slide itself shows it. If you can't see the
+  slide, keep the fact.

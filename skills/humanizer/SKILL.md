@@ -77,7 +77,9 @@ this screen, flow, or label row use?"
 ## Step 2 — Diagnose the tells
 
 Five families recur in every language; the language file has the concrete
-patterns.
+patterns. They're signals to review, not automatic fixes: change a line only when
+the pattern hurts it in context. A deliberate slogan, an ordered how-to, or a
+`~지만` that states a real limit can stay.
 
 1. **Translation-ese / calques** — structures imported from another language.
    (EN "in order to," noun pile-ups; KO `~에 대해`, `~을 통해`, `~을 제공합니다`)
@@ -98,7 +100,8 @@ Structure and data slides take a label naming what the slide is (`사용 흐름`
 `시스템 아키텍처`); keep a message title for a slide that lands one claim, and keep
 it plain. Match the form the rest of the deck uses, and keep numbers, names, and
 the qualifiers that change how a number reads, such as a small sample or a period
-(`Next.js · Supabase 구성`, not `기술 스택`).
+(`Next.js · Supabase 구성`, not `기술 스택`). A label may drop a fact only when the
+slide itself shows it; if you can't see the slide, keep it.
 
 ## Step 3 — Rewrite, then re-read
 
@@ -110,10 +113,11 @@ for a plain verb. Restraint beats cleverness; the best result looks unedited.
 
 - **Protected spans** (below) are byte-for-byte identical to the source.
 - **Register** matches what you locked in Step 1.
-- **No residual tells.** Re-scan against the language file; it's easy to fix four
-  and miss the fifth. Parallelism survives rewording (EN "Whether you're X or Y,"
+- **No residual tells.** Re-scan against the rules you loaded for this job (this
+  file, plus the language file if you read it); it's easy to fix four and miss the
+  fifth. Parallelism survives rewording (EN "Whether you're X or Y,"
   "From X to Y," an antithesis around an em-dash; KO a fresh 대구). If a line
-  still seesaws, it isn't fixed.
+  still seesaws for no reason, it isn't fixed.
 - **Rhythm varies.** Not every sentence the same length, and not one dense block
   where the format allows line breaks.
 - **Every edit traces to a tell.** Rewriting a fine line is "improving," a job
@@ -128,7 +132,8 @@ an awkward sentence, and rewrite around them:
 
 - Proper nouns: brand, product, model, company, and person names
 - Numbers, prices, dates, times, units, percentages, measurements
-- Text in direct quotation marks
+- Quoted speech or approved wording in quotation marks (not quotes the user put
+  around the text they want fixed)
 - URLs, emails, handles, hashtags, file names, code
 - Placeholders and markup: `{name}`, `{{count}}`, `%s`, `${user}`, ICU
   `{n, plural, …}`, HTML/JSX tags, i18n keys. A renamed or dropped placeholder is
@@ -142,8 +147,11 @@ an awkward sentence, and rewrite around them:
 
 - **Preserve meaning and facts.** Don't drop information, claims, or required
   wording for the sake of flow.
-- **Don't invent specifics.** Concreteness only helps when it's true. A scene,
-  number, or mechanism the source never stated is a fidelity break.
+- **Don't invent or shift meaning.** Keep who, what, conditions, timing, scope,
+  and certainty: "nothing to show" isn't "nothing exists," "may" isn't "will,"
+  "cozy" isn't "quiet." Don't add a scene, number, deadline, or mechanism, and
+  don't write as if from experience (`~더라고요`, "I tried it") unless the source
+  does.
 - **Keep each term's scope.** "Saved items" isn't "saved posts," and 항목 isn't 글.
   If you suspect the narrower word is what the product means, flag it.
 - **Keep the product's punctuation and quoting style** around names and

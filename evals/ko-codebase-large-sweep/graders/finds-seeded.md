@@ -19,5 +19,7 @@ Fourteen issues are seeded in the fixture:
 13. emails/welcome.ts — "귀하의 계정이 성공적으로 생성되었음을 알려드립니다." (stiff notice line inside a 해요체 welcome email)
 14. server/notify.ts notifyLike body — "${actor} 님께서 회원님의 게시물에 좋아요를 누르셨습니다." (drifts from its in-app twin and the other push bodies)
 
+Item 9 is a style call: a plain rewrite, or keeping it with a note that it's a deliberate brand line, both count as handling it.
+
 PASS if the reply proposes a rewrite for at least 11 of the 14, each rewrite is natural Korean in the register of its surface, keeps the meaning, and keeps every placeholder exactly ({name}, ${actor}).
 FAIL if it proposes rewrites for 10 or fewer, or a rewrite changes the meaning or drops or renames a placeholder.

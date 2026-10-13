@@ -1,5 +1,6 @@
 ---
 type: regex
-pattern: '습니다|[가-힣]요[.!?~]'
+pattern: '니다|[가-힣]요(?:[.!?~,]|\s*$)'
+flags: m
 match: not_contains
 ---

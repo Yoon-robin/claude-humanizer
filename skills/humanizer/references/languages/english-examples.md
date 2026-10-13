@@ -1,8 +1,8 @@
 # English — Worked Examples
 
 Companion to `english.md` for the `humanizer` skill: a full before/after piece.
-Read it for longer copy or when you're unsure how far a rewrite should go. For a
-short fix, `english.md` is enough.
+Read it for longer copy or when you're unsure how far a rewrite should go. A short
+fix or a sweep doesn't need it.
 
 ## Product blurb
 

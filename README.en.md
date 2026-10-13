@@ -78,7 +78,7 @@ skills/humanizer/
 └── references/
     ├── codebase-scan.md           ← sweeping a product's UI strings
     └── languages/
-        ├── korean.md              ← Korean tells and swaps (read every time)
+        ├── korean.md              ← Korean tells and swaps (read for longer copy and titles)
         ├── korean-examples.md     ← Korean before/after pieces (longer copy only)
         ├── english.md             ← English tells (delve, em-dash, antithesis…)
         ├── english-examples.md    ← English before/after piece
@@ -140,14 +140,18 @@ checks that it stays out.
 | `ko-codebase-drift-review` | Sweep of a small app fixture: obvious drift, subtle drift (particle after a placeholder, mixed button labels, a push message in another file), and restraint |
 | `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
 | `ko-slide-titles` | Slide titles in a deck the skill has never seen: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
+| `ko-report-titles` | A quarterly report deck: only the metaphor titles change; fine titles, a hedged risk ("최대 12% 오를 수 있습니다"), and both facts in a contrast title stay |
 | `ko-codebase-large-sweep` | An app-sized sweep (about 130 strings across 8 files): finds 14 seeded issues, leaves traps alone (legal copy, an audit log, logs, tests), and flags the test that asserts on a changed string |
 | `neg-*` | Requests the skill must **not** take: spelling-only fixes, comprehension-only translation, AI-detector evasion |
 
 Against runs without the skill, the picture is clear:
 
-- **Large difference: slide titles.** On a deck it had never seen, the skill kept
-  proper nouns and numbers when shortening titles; runs without it dropped them
-  every time.
+- **Large difference: slide titles.** Where a title is easy to shorten into a
+  label like "Tech stack," runs without the skill dropped proper nouns and numbers
+  every time; the skill kept them. But a one-sentence instruction (keep names,
+  numbers and their qualifiers, and the original register; change only what's
+  needed) got the same result. On a number-heavy report deck, runs without the
+  skill kept the facts too.
 - **Small difference: single pieces of copy and codebase sweeps.** Current models
   polish a formal notice or a 반말 caption well without the skill. In an app-sized
   sweep, the base model also found every seeded issue and avoided the traps. The

@@ -35,8 +35,10 @@ one `ko.json` holds many surfaces.
 ## 3. Set each surface's register
 
 Tally the speech level per surface (KO 해요체 / 합니다체 / 반말 / 명사형; EN
-contractions, sentence vs. Title Case, warmth). The dominant one, usually the
-voice of the newest strings, is the target.
+contractions, sentence vs. Title Case, warmth). Decide the target in this order:
+the user's instruction or a style guide, then the consistent voice of same-role
+strings on that surface (errors with errors, buttons with buttons). Don't decide
+by a bare majority or by guessing which strings are newer.
 
 - **Converge within a surface, never across.** A consistently formal surface, such
   as legal copy or an audit log, stays formal even when the app speaks 해요체.
@@ -50,6 +52,8 @@ voice of the newest strings, is the target.
   a healthy result; don't manufacture finds.
 - Change only strings with a tell or drift, and leave the rest byte-identical.
 - Keep placeholders, markup, and keys intact (see protected spans in `SKILL.md`).
+  In ICU messages keep variable names, selector keys (`one`, `other`), and braces;
+  the text inside each branch is copy and can be edited.
 - Respect the slot: buttons, tabs, and toasts truncate.
 - Don't touch other locales unless asked, and don't rename keys or reformat files.
 - **Search the repo for every string you change.** Tests, snapshots, and e2e
@@ -66,7 +70,8 @@ voice of the newest strings, is the target.
 Close with totals (scanned / changed / flagged) and a short **Flagged, not
 changed** list: split surfaces, legal wording, ambiguous copy, each with who should
 decide. Don't draft replacement wording for legal or consent copy; a suggestion in
-a review table tends to get pasted in unreviewed.
+a review table tends to get pasted in unreviewed. In Why, name the neighbor strings
+you compared against, so a reviewer can check the call.
 
 ## 6. Large repos
 
@@ -78,9 +83,11 @@ report the register it found per surface so conflicts show up when you merge.
 - **Particles after placeholders.** `{name}이` / `{name}가` breaks for about half of
   all names, and `{name}이(가)` reads machine-made. Use the codebase's josa helper
   if it has one; otherwise restructure (`{name} 님이`, `작성자: {name}`). Particles
-  that don't depend on 받침, such as `에`, `의`, `도`, `와 함께`, are fine. Don't
-  invent a helper mid-pass; flag it.
-- **`회원님` / `고객님`** in a 해요체 feed is over-formal and a drift marker. Prefer
-  `내` or no pronoun.
+  that don't change with 받침, such as `에`, `의`, `도`, `만`, are fine; `와/과`,
+  `을/를`, `은/는`, `이/가`, `(으)로` change and need the same care. Don't invent a
+  helper mid-pass; flag it.
+- **`회원님` / `고객님`** is drift only when the surface's other strings address the
+  user differently (`내`, or no pronoun). On a surface that uses it consistently it
+  stays; switching to `내` changes the point of view, so follow the neighbors.
 - **Label endings.** Buttons and tabs are usually 명사형 or a verb stem (`저장`,
   `저장하기`); helper text carries the ending. Mixed forms in one row are drift.

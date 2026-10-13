@@ -38,12 +38,15 @@ Adapt these to the language (some won't apply; add ones that are unique to it):
 
 A language gets two files, so a short fix doesn't pay for long examples:
 
-**`<language>.md` — the tells file** (read on every use)
+**`<language>.md` — the tells file** (read for longer copy and titles)
 
 - Open with 2–3 sentences on this language's overall AI "fingerprint."
 - A `## Contents` list if the file gets long (>150 lines).
 - One `##` section per family, each with named entries and short ❌/✅ pairs.
 - A `## Quick swap table` for the highest-frequency fixes.
+- A titles section: the skill routes title and headline work to it.
+- Every ✅ keeps the ❌ line's meaning and register: no new facts, deadlines, or
+  experiences, no stronger claims, and no ending change the tell didn't require.
 - Keep it to rules and short pairs; full pieces go in the examples file.
 
 **`<language>-examples.md` — worked examples** (read for longer copy)

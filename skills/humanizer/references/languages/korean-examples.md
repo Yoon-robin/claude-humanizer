@@ -11,38 +11,39 @@ one tone.
 
 ## Marketing / ad copy
 
-Register: usually 명사형 종결 or 해요체. Punchy, rhythmic, benefit-first.
+Register: whatever the source uses; this one is 합니다체. Benefit-first.
 
 **Before (AI):**
 > 저희 제품은 최고의 품질을 제공하는 완벽한 솔루션입니다. 가벼운 무게와 오래가는 배터리 등
 > 다양한 기능들을 통해 당신의 일상을 더욱 특별하게 만들어 드립니다. 지금 바로 구매하세요!
 
 **After (human):**
-> 가벼워요. 배터리도 오래가고요.
+> 가볍고 배터리가 오래갑니다.
+> 지금 구매하세요.
 
 Fixed: `최고의/완벽한/특별한` empty superlatives, `~을 제공하는`, `다양한 기능들`, `~을 통해`,
-`당신의`, `지금 바로 ~하세요!` cliché, and flat rhythm → a short line and a trailing
-`~고요`. The rewrite keeps only the source's two facts (가벼운 무게, 오래가는 배터리);
-`최고의 품질` is cut rather than turned into a new claim.
+`당신의`, and the `지금 바로 ~하세요!` cliché. The rewrite keeps the source's two facts
+(가벼운 무게, 오래가는 배터리) and one plain call to action, since this is purchase
+copy; `최고의 품질` is cut rather than turned into a new claim.
 
 ---
 
 ## UI microcopy
 
-Register: 해요체, short and functional. No hype, no padding. Clarity first, but
-still warm and human — not robotic.
+Register: 해요체, because the app's other microcopy is 해요체. Short and
+functional; no hype, no padding.
 
 **Empty state — Before (AI):**
 > 현재 표시할 수 있는 항목이 존재하지 않습니다. 새로운 항목을 추가하시기 바랍니다.
 
 **After:**
-> 아직 아무것도 없어요. 첫 항목을 추가해 보세요.
+> 표시할 항목이 없어요. 새 항목을 추가해 보세요.
 
 **Error toast — Before (AI):**
 > 요청을 처리하는 과정에서 오류가 발생하였습니다. 잠시 후 다시 시도해 주시기 바랍니다.
 
 **After:**
-> 잠깐 문제가 생겼어요. 잠시 후 다시 시도해 주세요.
+> 요청을 처리하지 못했어요. 잠시 후 다시 시도해 주세요.
 
 **Button / confirmation — Before (AI):**
 > 정말로 이 항목을 삭제하시는 것이 맞으십니까?
@@ -51,14 +52,14 @@ still warm and human — not robotic.
 > 이 항목을 삭제할까요?
 
 Fixed: `존재하지 않습니다`, `~하시기 바랍니다`, over-formal `~하였습니다`, redundant
-`과정에서`, and needless deference → concise 해요체 that still sounds like a person.
+`과정에서`, and needless deference. The meaning stays exact: "nothing to show" isn't
+"nothing exists," and "try again later" doesn't promise the error is brief.
 
 ---
 
 ## SNS / blog post
 
-Register: 해요체 or 반말 by brand. Conversational, opinionated, rhythm-heavy.
-Fragments and questions welcome.
+Register: the brand account's voice; this one speaks 해요체.
 
 **Before (AI):**
 > 오늘은 여러분께 저희의 새로운 카페를 소개해 드리고자 합니다. 저희 카페는 매주 직접
@@ -67,12 +68,12 @@ Fragments and questions welcome.
 
 **After:**
 > 새로 문 열었어요. 매주 직접 볶은 원두를 쓰고, 자리도 넉넉해요.
-> 조용히 앉아 있기 좋은 곳이에요. 놀러 오세요 :)
+> 분위기도 아늑하고요. 놀러 오세요.
 
 Fixed: `여러분께`, `~하고자 합니다`, `~뿐만 아니라 ~도`, `~을 제공합니다`, `많은 관심
 부탁드립니다` → warm, specific, varied rhythm. The specifics (매주 직접 볶은 원두, 넉넉한
-좌석) are the source's own; the rewrite adds no backstory. Emoji kept minimal and only
-where a casual brand voice supports it — not as proof-of-humanity.
+좌석, 아늑한 분위기) are the source's own; "cozy" stays cozy rather than becoming
+"quiet," and no emoji or backstory is added.
 
 ---
 
@@ -116,8 +117,9 @@ every slide a full-sentence title with a hook. The author kept the labels below.
 | Why we built it | 우리 학교 사람들이 머무는 곳 하나를 만들기로 했습니다 | 우리 학교 사람들이 모이는 곳을 만들기로 했습니다 | poetic verb (머무는) |
 
 The last row stays a sentence because that slide's job is to state the reason for
-the project; only the poetic verb goes. The labels don't invent anything: each
-names what the slide already shows.
+the project; only the poetic verb goes. The labels drop facts (the small numbers,
+the one server and four entry points) only because each slide shows them in its
+chart or diagram. Without the slide in view, keep those facts in the title.
 
 ---
 

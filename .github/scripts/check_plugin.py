@@ -29,6 +29,7 @@ PLUGIN_JSON = ".claude-plugin/plugin.json"
 MARKETPLACE_JSON = ".claude-plugin/marketplace.json"
 CHANGELOG = "CHANGELOG.md"
 MIN_OVERLAP = 12  # characters; shorter shared phrases are usually just the cliché being named
+MIN_OVERLAP_LATIN = 40  # English phrases repeat more, so require a longer match
 DESCRIPTION_LIMIT = 1024
 # Changes under these paths reach people who install the plugin.
 SHIPPED_PREFIXES = ("skills/", PLUGIN_JSON)
@@ -57,6 +58,11 @@ def read_description(skill_md: Path) -> str:
     raise ValueError("no description field")
 
 
+def version_key(version) -> tuple:
+    """'1.10.0' -> (1, 10, 0), so versions compare numerically, not as text."""
+    return tuple(int(part) for part in re.findall(r"\d+", str(version)))
+
+
 def git(*args: str) -> str:
     return subprocess.run(
         ["git", *args], cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8"
@@ -67,6 +73,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--base", help="git ref to compare against for the version-bump check")
     args = parser.parse_args()
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8")
     errors = []
 
     # 1. Manifests
@@ -101,10 +109,10 @@ def main() -> int:
                 base_version = json.loads(git("show", f"{args.base}:{PLUGIN_JSON}")).get("version")
             except subprocess.CalledProcessError:
                 base_version = None  # the base predates the plugin manifest
-            if base_version is not None and base_version == plugin.get("version"):
+            if base_version is not None and version_key(plugin.get("version")) <= version_key(base_version):
                 errors.append(
-                    f"shipped files changed since {args.base} ({', '.join(shipped)}) but the version is "
-                    f"still {base_version}; bump it in {PLUGIN_JSON}"
+                    f"shipped files changed since {args.base} ({', '.join(shipped)}) but the version went "
+                    f"from {base_version} to {plugin.get('version')}; raise it in {PLUGIN_JSON}"
                 )
             else:
                 print(f"version: {base_version} -> {plugin.get('version')} ok")
@@ -135,7 +143,9 @@ def main() -> int:
             # sentences and quoted strings with Hangul, long enough to be distinctive
             for piece in re.split(r'[\n"`<>]|(?<=[.?!])\s', text):
                 piece = piece.strip(" -•*:0123456789.[]")
-                if len(piece) >= MIN_OVERLAP and re.search("[가-힣]", piece) and piece in skill_text:
+                hangul = re.search("[가-힣]", piece)
+                long_enough = len(piece) >= (MIN_OVERLAP if hangul else MIN_OVERLAP_LATIN)
+                if long_enough and piece in skill_text:
                     overlaps.append(f"{path.relative_to(ROOT).as_posix()}: {piece}")
     for item in sorted(set(overlaps)):
         print(f"WARNING: eval input also appears in skill files — {item}")
