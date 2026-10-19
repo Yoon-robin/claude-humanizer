@@ -90,12 +90,12 @@ structured than SNS. The trap here is the mechanical greeting-body-closing arc.
 
 **After:**
 > 안녕하세요, 고객님. 늘 이용해 주셔서 감사합니다.
-> 이번 주부터 앱에서 바로 예약하실 수 있어요. 전화하거나 기다리지 않아도 됩니다.
+> 이번 주부터 앱에서 바로 예약하실 수 있습니다. 전화하거나 기다리지 않아도 됩니다.
 
 Fixed: `~게 되었음을 알려 드리고자 합니다`, `~을 통해`, `~하실 수 있습니다`, `많은 관심
 부탁드립니다`, and the rigid greeting-body-closing arc → a short, direct note. The
-formality holds: it stays a polite customer email, blending 합니다체 and 해요체 the way
-a real writer would instead of dropping wholesale into 해요체. `고객님` stays too; swapping
+formality holds: the source is 합니다체, so the rewrite stays 합니다체 and gets its
+rhythm from shorter sentences, not from switching endings. `고객님` stays too; swapping
 in a name variable would change the template, not the tone.
 
 ---
@@ -130,8 +130,10 @@ appears in context — a string that's fine on its own but out of step with its
 neighbors. It's the dominant tell in mature codebases, where old strings keep an
 old voice while newer ones move on.
 
-Context: a notification list where recent items are all 해요체 ("도전을 받아들였어요",
-"제출했어요"), but one legacy notification stayed 습니다체 with over-formal 2nd person.
+Context: a notification list where recent items are all 해요체 and call the user
+`내` ("내 글에 좋아요를 눌렀어요", "내 도전을 받아들였어요"), but one legacy notification
+stayed 습니다체 with `회원님`. The rewrite follows the neighbors' point of view; on a
+surface that says `회원님` throughout, `회원님` would stay.
 
 **Before (legacy drift):**
 > OO 님이 글의 회원님 댓글에 답글을 남겼습니다.

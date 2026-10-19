@@ -47,7 +47,7 @@ folder), copy or upload `skills/humanizer` as a skill.
 
 **Copy, one piece at a time.** Marketing and ad copy, landing pages, UI microcopy,
 push notifications, social posts, emails, newsletters, presentation slide titles,
-and report headings. It hunts five tell families that recur in every language:
+and report headings. It hunts six tell families that recur in every language:
 
 1. **Translation-ese / calques** — structures imported from another language
 2. **Over-formality, cliché & decoration** — hype, empty phrases, and metaphors
@@ -55,6 +55,8 @@ and report headings. It hunts five tell families that recur in every language:
 3. **Flat rhythm** — uniform length and cadence (the most universal tell)
 4. **Structural excess** — bullets, signposting, and scaffolding forced onto copy
 5. **Slick symmetrical parallelism** — the too-perfect balanced line
+6. **Staging & leftovers** — lines that announce or frame instead of saying, a
+   send-off about the bright future, chatbot sign-offs
 
 **A whole product's UI strings.** Point it at a codebase's locale files, JSX text,
 and notification templates. In a mature product, most real problems aren't
@@ -74,7 +76,7 @@ One skill with a language-agnostic spine and per-language catalogs:
 ├── plugin.json                    ← plugin manifest
 └── marketplace.json               ← lets `/plugin marketplace add` find it
 skills/humanizer/
-├── SKILL.md                       ← workflow + the 5 cross-lingual tell families
+├── SKILL.md                       ← workflow + the 6 cross-lingual tell families
 └── references/
     ├── codebase-scan.md           ← sweeping a product's UI strings
     └── languages/
@@ -85,6 +87,7 @@ skills/humanizer/
         └── _template.md           ← how to add a new language
 evals/                             ← test suite for `claude plugin eval`
 .github/                           ← checks that run on every push and PR
+experiments/                       ← inputs, outputs, and scoring behind CHANGELOG numbers
 CHANGELOG.md                       ← per-version changes and measurements
 ```
 
@@ -116,7 +119,8 @@ and titles were just as good with `SKILL.md` alone.
   a tidy codebase, changing a small fraction of what was scanned is the expected
   result.
 - **Register is held, not lowered.** Formality, speech level, and honorifics stay
-  where they were. Fixing drift means returning a string to the voice its surface
+  where they were. 합니다체 stays 합니다체 and 해요체 stays 해요체; they're mixed only
+  where the source already mixes them. Fixing drift means returning a string to the voice its surface
   already chose. That's consistency, not casualizing.
 - **Content is protected.** Names, numbers and their qualifiers (period, range,
   condition), prices, quotes, legal wording, placeholders, and the feature names a
@@ -140,7 +144,7 @@ checks that it stays out.
 | `ko-landing-copy` | Fresh copy: named features kept, no superlatives or slick 대구 |
 | `ko-codebase-drift-review` | Sweep of a small app fixture: obvious drift, subtle drift (particle after a placeholder, mixed button labels, a push message in another file), and restraint |
 | `ko-formal-notice-keeps-register`, `ko-banmal-brand-caption` | Register held both ways: a formal notice stays formal (date and time untouched), a 반말 brand caption stays 반말 without forced slang or emoji |
-| `ko-slide-titles` | Slide titles in a deck the skill has never seen: metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
+| `ko-slide-titles` | Slide titles in the development deck (used while tuning the rules): metaphor, contrast, and comma-split titles become labels, proper nouns and numbers stay, and titles that were already fine are left alone |
 | `ko-report-titles` | A quarterly report deck: only the metaphor titles change; fine titles, a hedged risk ("최대 12% 오를 수 있습니다"), and both facts in a contrast title stay |
 | `ko-proposal-titles` | A proposal deck the skill has never seen: contrast, metaphor, left/right mirror, and question titles get fixed while numbers, periods, and qualifiers like 약 and 최대 stay. Runs without the skill dropped the numbers here |
 | `ko-codebase-large-sweep` | An app-sized sweep (about 130 strings across 8 files): finds 14 seeded issues, leaves traps alone (legal copy, an audit log, logs, tests), and flags the test that asserts on a changed string |
@@ -158,6 +162,9 @@ Against runs without the skill, the picture is clear:
   sweep, the base model also found every seeded issue and avoided the traps. The
   skill's edge there was making smaller edits to marketing headlines instead of
   rewriting them, at the cost of more tokens and time.
+- **Longer copy:** loading `korean.md` and the examples didn't beat `SKILL.md`
+  alone. `SKILL.md` beat the one-sentence instruction on a formal email by keeping
+  its stated purpose and emphasis.
 
 The small-difference cases guard against the skill making things worse.
 Per-version measurements and method are in [CHANGELOG.md](CHANGELOG.md) (Korean).
@@ -176,9 +183,14 @@ start with the smoke run. Results land in `evals/results/`, which is git-ignored
 - **Add a language:** copy
   [`_template.md`](skills/humanizer/references/languages/_template.md) to
   `<language>.md`, fill it in with ❌/✅ pairs, and add it to the table above.
-- **Check before pushing:** run `claude plugin validate . --strict` and
-  `python .github/scripts/check_plugin.py --base origin/master`. CI runs the same
-  checks on every push and pull request.
+- **Check before pushing:** validate each manifest with
+  `claude plugin validate <file> --strict`, then run
+  `python .github/scripts/check_plugin.py --base origin/master` and
+  `python .github/scripts/check_graders.py`. CI runs the same checks on every push
+  and pull request. When you change a regex grader, add pass and fail cases to
+  `check_graders.py`.
+- **Keep `SKILL.md` under 2,000 words.** It's read in full on every use, and it was
+  most of the measured token cost.
 - **Keep the skill's `description` under 1,024 characters.** It's the only part
   loaded into every session, and longer descriptions are rejected by surfaces that
   enforce the Agent Skills limit. Put "how" in the body and keep "when" in the

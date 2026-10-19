@@ -1,0 +1,89 @@
+{
+  "scores": {
+    "R1": {
+      "naturalness": 5,
+      "fidelity": 4,
+      "restraint": 3,
+      "register_held": true,
+      "fidelity_problems": [
+        "정기 점검과 정책 시행의 공통 목적인 '보다 안전한 업무 환경'을 삭제했습니다. 뒤의 회사 정보 보호 목적만으로는 이 취지를 모두 보존하지 못합니다.",
+        "'필수적인 조치'를 단순히 '조치'로 바꾸어, 해당 조치가 꼭 필요하다는 원문의 설명을 생략했습니다. 비밀번호 변경 의무 자체는 유지했습니다."
+      ],
+      "tells_left": []
+    },
+    "R2": {
+      "naturalness": 5,
+      "fidelity": 4,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [
+        "정기 점검과 정책 시행의 공통 목적인 '보다 안전한 업무 환경'을 삭제했습니다.",
+        "'필수적인 조치'를 '조치'로 줄여, 해당 조치의 필요성을 강조한 원문의 설명을 생략했습니다. 비밀번호 변경 의무 자체는 유지했습니다."
+      ],
+      "tells_left": []
+    },
+    "R3": {
+      "naturalness": 5,
+      "fidelity": 4,
+      "restraint": 5,
+      "register_held": true,
+      "fidelity_problems": [
+        "정기 점검과 정책 시행의 공통 목적인 '보다 안전한 업무 환경'을 삭제했습니다.",
+        "'필수적인 조치'를 '조치'로 줄여, 해당 조치가 꼭 필요하다는 원문의 설명을 생략했습니다. 비밀번호 변경 의무 자체는 유지했습니다."
+      ],
+      "tells_left": []
+    },
+    "R4": {
+      "naturalness": 5,
+      "fidelity": 4,
+      "restraint": 5,
+      "register_held": true,
+      "fidelity_problems": [
+        "정기 점검과 정책 시행의 공통 목적인 '보다 안전한 업무 환경'을 삭제했습니다. 비밀번호 정책의 회사 정보 자산 보호 목적은 유지했습니다."
+      ],
+      "tells_left": []
+    },
+    "R5": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 5,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R6": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R7": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R8": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    }
+  },
+  "ranking": [
+    "R5",
+    "R8",
+    "R7",
+    "R6",
+    "R4",
+    "R3",
+    "R2",
+    "R1"
+  ]
+}

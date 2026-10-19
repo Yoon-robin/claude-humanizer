@@ -179,6 +179,6 @@ Slide titles, report headings, landing-page section headers.
   slide whose job is one claim.
 - Shortening keeps names, numbers, and the qualifiers that change how a number reads
   ("up to," "about," the period, a small sample): "Downloads passed 12,000 in one week"
-  becomes "12,000+ downloads in the first week," not "Downloads."
+  becomes "12,000+ downloads in one week," not "Downloads."
 - A label may drop a fact only when the slide itself shows it. If you can't see the
   slide, keep the fact.

@@ -4,7 +4,7 @@ Template for adding a new language catalog to the `humanizer` skill. Copy this t
 `<language>.md` (lowercase English name, e.g. `japanese.md`, `spanish.md`), fill it
 in, and the skill will load it automatically when it detects that language.
 
-The universal five families live in `SKILL.md`; your job here is to make them
+The universal six families live in `SKILL.md`; your job here is to make them
 **concrete for this language** — the specific words, particles, structures, and
 register system a native writer would notice. Keep entries as `❌ before → ✅ after`
 pairs; examples do far more than abstract rules.

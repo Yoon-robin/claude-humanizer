@@ -1,0 +1,87 @@
+{
+  "scores": {
+    "R1": {
+      "naturalness": 4,
+      "fidelity": 5,
+      "restraint": 3,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": [
+        "'가계부가 한층 똑똑해졌어요'는 구체적인 변화보다 막연한 성능 향상을 내세우는 상투적인 홍보 표현이에요."
+      ]
+    },
+    "R2": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R3": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 3,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R4": {
+      "naturalness": 4,
+      "fidelity": 4,
+      "restraint": 3,
+      "register_held": true,
+      "fidelity_problems": [
+        "'월 예산을 넘으면 알림을 받을 수 있어요'를 '월 예산을 넘으면 알림을 보내 드려요'로 바꾸면서, 수신할 수 있다는 기능 안내를 발송한다는 단정으로 강화했어요. 뒤에 설정에서 켜고 끌 수 있다는 설명은 남아 있지만, 원문의 가능 표현은 유지되지 않았어요."
+      ],
+      "tells_left": [
+        "'업데이트는 앱스토어와 구글 플레이에서 받으세요'는 주변의 부드러운 설명체에 비해 갑자기 지시하는 느낌이 나요."
+      ]
+    },
+    "R5": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R6": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 5,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    },
+    "R7": {
+      "naturalness": 4,
+      "fidelity": 5,
+      "restraint": 4,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": [
+        "'가계부가 더 똑똑하고 편리해졌어요'에 구체성이 부족한 홍보 문구가 남아 있어요.",
+        "'오늘부터 모아로 돈 관리를 더 쉽게 해 보세요'는 자연스럽게 읽히지만, 원문의 상투적인 행동 유도 문구를 상당 부분 유지해요."
+      ]
+    },
+    "R8": {
+      "naturalness": 5,
+      "fidelity": 5,
+      "restraint": 3,
+      "register_held": true,
+      "fidelity_problems": [],
+      "tells_left": []
+    }
+  },
+  "ranking": [
+    "R6",
+    "R5",
+    "R2",
+    "R8",
+    "R3",
+    "R7",
+    "R1",
+    "R4"
+  ]
+}

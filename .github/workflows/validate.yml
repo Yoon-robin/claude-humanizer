@@ -20,8 +20,15 @@ jobs:
       - name: Install Claude Code
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Validate plugin and marketplace manifests
-        run: claude plugin validate . --strict
+      # `claude plugin validate .` only checks marketplace.json, so name both files.
+      - name: Validate marketplace manifest
+        run: claude plugin validate .claude-plugin/marketplace.json --strict
+
+      - name: Validate plugin manifest
+        run: claude plugin validate .claude-plugin/plugin.json --strict
+
+      - name: Check regex graders against known answers
+        run: python3 .github/scripts/check_graders.py
 
       - name: Check descriptions and version bump
         env:

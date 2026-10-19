@@ -3,9 +3,12 @@
 1. The plugin and marketplace manifests parse, and the marketplace entry's name
    matches the plugin manifest's name. A mismatch breaks installs.
 2. Every SKILL.md description is at most 1,024 characters, the Agent Skills
-   limit. Surfaces that enforce it reject the skill.
-3. With --base <ref>: if anything users receive changed since <ref>, the version
-   in .claude-plugin/plugin.json must differ from <ref>'s. Installs are pinned to
+   limit. Surfaces that enforce it reject the skill. Every SKILL.md body is at
+   most SKILL_WORD_LIMIT words: it's read on every use, and measurements showed
+   it's most of the skill's token cost, so growth has to earn its place.
+3. The version is plain MAJOR.MINOR.PATCH. With --base <ref>: if anything users
+   receive changed since <ref>, the version in .claude-plugin/plugin.json must be
+   higher than <ref>'s. Installs are pinned to
    that version, so an unbumped change never reaches them.
 4. CHANGELOG.md has an entry for the current version, so every release records
    what changed and how it was checked.
@@ -31,6 +34,8 @@ CHANGELOG = "CHANGELOG.md"
 MIN_OVERLAP = 12  # characters; shorter shared phrases are usually just the cliché being named
 MIN_OVERLAP_LATIN = 40  # English phrases repeat more, so require a longer match
 DESCRIPTION_LIMIT = 1024
+SKILL_WORD_LIMIT = 2000
+VERSION_FORMAT = re.compile(r"\d+\.\d+\.\d+")
 # Changes under these paths reach people who install the plugin.
 SHIPPED_PREFIXES = ("skills/", PLUGIN_JSON)
 
@@ -99,8 +104,14 @@ def main() -> int:
         print(f"description: {rel} {length}/{DESCRIPTION_LIMIT} chars {status}")
         if length > DESCRIPTION_LIMIT:
             errors.append(f"{rel}: description is {length} chars, over the {DESCRIPTION_LIMIT} limit")
+        words = len(skill_md.read_text(encoding="utf-8").split())
+        print(f"size: {rel} {words}/{SKILL_WORD_LIMIT} words")
+        if words > SKILL_WORD_LIMIT:
+            errors.append(f"{rel}: {words} words, over the {SKILL_WORD_LIMIT} limit; cut before adding")
 
-    # 3. Version bump
+    # 3. Version format and bump
+    if not VERSION_FORMAT.fullmatch(str(plugin.get("version"))):
+        errors.append(f"version {plugin.get('version')!r} isn't MAJOR.MINOR.PATCH")
     if args.base:
         changed = [p for p in git("diff", "--name-only", args.base).splitlines() if p]
         shipped = [p for p in changed if p.startswith(SHIPPED_PREFIXES)]

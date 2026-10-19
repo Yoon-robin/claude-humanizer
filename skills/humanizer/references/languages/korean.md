@@ -47,9 +47,10 @@ Correct Korean built on English grammar. A native writer wouldn't reach for it.
 - ❌ 당신의 하루를 더 특별하게 만들어 드립니다.
 - ✅ 하루를 더 특별하게 만들어 드립니다.
 
-**`~할 수 있습니다` on every line** — state it, or use an imperative.
+**`~할 수 있습니다` on every line** — merge the repeats. Don't turn a capability
+into a command (`저장하세요`); that changes what the line says.
 - ❌ 저장할 수 있습니다. 공유할 수 있습니다. 편집할 수 있습니다.
-- ✅ 저장하고, 공유하고, 편집하세요.
+- ✅ 저장·공유·편집할 수 있습니다.
 
 **Double passive `~되어집니다`**
 - ❌ 자동으로 저장되어집니다.
@@ -61,7 +62,7 @@ Correct Korean built on English grammar. A native writer wouldn't reach for it.
 
 **`다양한` as a default modifier** — cut it, or name the things.
 - ❌ 다양한 기능과 다양한 혜택을 다양한 방식으로 제공합니다.
-- ✅ 기능도 혜택도 여러 가지입니다.
+- ✅ 여러 기능과 혜택을 다양한 방식으로 제공합니다.
 
 **`및` / `등`** — stiff 문어체 and a report reflex. Use `~와/과`, `-고`, or a comma. If
 the list is partial, keep that meaning (`같은`, or keep `등`); dropping it makes the
@@ -107,7 +108,7 @@ the source never made.
 **Forced friendliness `함께 ~해요`, `다 같이`, `~하는 건 어떨까요?`** — often rides on a
 rule-of-three.
 - ❌ 우리 함께 건강한 습관을 만들어 가는 건 어떨까요?
-- ✅ 건강한 습관, 오늘부터 시작해요.
+- ✅ 건강한 습관을 만들어 보세요.
 - ❌ 선배한테 묻고, 친구랑 한 판 하고, 다 같이 모여요.
 - ✅ 선배한테 묻고, 친구랑 게임도 해요.
 
@@ -121,6 +122,16 @@ information.
 - ❌ 우리 학교 사람들이 머무는 곳 하나를 만들기로 했습니다.
 - ✅ 우리 학교 사람들이 모이는 곳을 만들기로 했습니다.
 
+**Staging and leftovers** — a frame around the content instead of content.
+- ❌ 오늘은 여러분께 신메뉴 소식에 대해 말씀드리려고 합니다. 바로 겨울 한정 메뉴입니다.
+- ✅ 겨울 한정 메뉴가 나왔습니다.
+- ❌ 결국 중요한 건 꾸준함입니다. 이것이 핵심입니다.
+- ✅ 결국 중요한 건 꾸준함입니다.
+- ❌ 앞으로의 행보가 더욱 기대됩니다. (보도 자료 끝)
+- ✅ (삭제. 마지막 사실에서 끝냅니다.)
+- ❌ 도움이 되셨길 바랍니다. 궁금한 점이 있으면 언제든 말씀해 주세요. (게시용 글 끝)
+- ✅ (삭제)
+
 ---
 
 ## 3. 밋밋한 리듬 — Flat rhythm
@@ -129,10 +140,11 @@ The most reliable signature: uniform length and repeated endings.
 
 **Uniform endings**
 - ❌ 저희는 신선한 재료만 씁니다. 매일 아침 직접 굽습니다. 정성을 다합니다.
-- ✅ 신선한 재료만 씁니다. 매일 아침, 직접 굽고요. 그게 저희 방식이에요.
+- ✅ 저희는 신선한 재료만 써서 매일 아침 직접 굽습니다. 정성을 다합니다.
 
-The ✅ blends 합니다체 and 해요체. In polite copy that's a fix, not a new problem:
-hold the politeness level and vary the endings.
+The ✅ stays 합니다체 and varies length by joining two sentences. Switching some
+lines to 해요체 for rhythm changes the register; mix only where the source
+already mixes.
 
 **Uniform length** — break three medium sentences with a short one or a fragment.
 - ❌ 이 앱은 일정을 관리해 줍니다. 알림도 보내 줍니다. 통계도 제공합니다.
@@ -141,7 +153,8 @@ hold the politeness level and vary the endings.
 **Fragments and questions are allowed, not required.** Use one where it fits the
 voice; don't add a question or a fragment the source has no reason for.
 
-**A wider ending palette** — one or two per piece, matched to the brand voice:
+**A wider ending palette** — in 해요체 copy, one or two per piece, matched to the
+brand voice:
 - **명사형 종결** — 충전 걱정 없는 30시간.
 - **`~거든요`** (a warm reason) — 저희가 좀 까다롭거든요.
 - **`~더라고요`** (shared discovery) — 써 보니 확실히 다르더라고요. Only when the source
@@ -178,8 +191,8 @@ Essay scaffolding on copy that should just flow.
 be another tidy 대구.
 - ❌ 소리는 지우고, 하루는 채우고.
 - ✅ 주변 소음을 줄여 줘요.
-- ❌ 일할 땐 완벽하게, 쉴 땐 확실하게.
-- ✅ 집중할 때도 쉴 때도 편하게 써요.
+- If the 대구 carries no fact you can keep (`일할 땐 완벽하게, 쉴 땐 확실하게`), don't
+  invent a benefit to replace it; cut it or flag it.
 
 **A tidy intro-body-conclusion arc on a two-line message**
 - ❌ 안녕하세요. 오늘은 새로운 소식을 전해 드리려 합니다. 바로 신제품 출시 소식입니다.
@@ -222,7 +235,8 @@ headers. AI makes every title a full sentence with a hook, and the hook is the t
   `응답자는 적지만 추천 의향은 90%입니다` → `추천 의향 90% (응답자 적음)`, not `추천 의향 90%`.
 - A label may drop a fact (a count, a period, a caveat) only when the slide itself
   shows it in a diagram, chart, or table. If you can't see the slide, keep the fact
-  in the title. Keep the relation too: `1,200명을 넘었습니다` is `1,200명 이상`, not `1,200명`.
+  in the title. Keep the relation too: `1,200명을 넘었습니다` is `1,200명 돌파` (or `초과`), not
+  `1,200명` and not `1,200명 이상`, which means ≥.
 
 ---
 
